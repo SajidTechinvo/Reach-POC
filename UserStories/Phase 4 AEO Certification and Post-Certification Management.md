@@ -1,5 +1,5 @@
 # AEO Management System - User Stories
-## Phase 3: Validation & Risk Assessment
+## Phase 4: AEO Certification & Post-Certification Management
 
 **Document Version:** 1.0  
 **Date:** November 07, 2025  
@@ -13,1547 +13,1794 @@
 ## Document Overview
 
 ### Purpose
-This document contains detailed user stories for **Phase 3: Validation & Risk Assessment** of the AEO Management System. All user stories are directly derived from the Business Requirements Document (BRD V1.11) and System Requirements Document (SRD V1.2.5) without assumptions.
+This document contains detailed user stories for **Phase 4: AEO Certification & Post-Certification Management** of the AEO Management System. All user stories are directly derived from the Business Requirements Document (BRD V1.11) and System Requirements Document (SRD V1.2.5) without assumptions.
 
 ### Scope
-Phase 3 covers the complete validation and risk assessment lifecycle including:
-- **Initial Risk Assessment** (Local Customs)
-- **Assessment Plan Preparation** (Local Customs)
-- **Validation Meetings Management** (Local Customs & Commercial Establishment)
-- **On-Site Validation** (Local Customs)
-- **Assessment File Creation** (Local Customs)
-- **Assessment Report Generation and Approval** (Local Customs & Commercial Establishment)
-- **Control Plan Development** (Local Customs)
+Phase 4 covers the complete certification and post-certification lifecycle including:
+- **Certificate Issuance Process** (Federal and Local Customs)
+- **Benefits Management** (Federal and Local Customs)
+- **Key Account Management** (Local Customs)
+- **Control Plan Execution and Monitoring** (Local Customs)
+- **Performance Monitoring** (Local Customs)
+- **Re-validation Process** (Local Customs)
+- **Certificate Suspension and Revocation** (Local Customs)
+- **Appeals Management** (Local Customs, Federal Customs, and AEO Portal)
 
 ### User Roles
 
+#### Federal Customs Portal
+- **Senior Federal Administrator:** Issues AEO certificates, manages federal-level operations
+- **Federal Administrator:** Reviews and processes escalated appeal requests
+
 #### Local Customs Portal
-- **Validation Team Member:** Conducts initial risk assessment, prepares assessment plan, schedules meetings, performs on-site validation, prepares assessment file and report, develops control plan
-- **Validation Team Lead:** Reviews and approves initial risk assessment, assessment plan, assessment file, and assessment report; shares reports with establishment
-- **AEO Program Manager:** Makes final decision on AEO status, assigns Key Account Managers Team
-- **Key Account Managers Team Member:** Manages control plan post-certification, monitors AEO performance
+- **AEO Program Manager:** Assigns Key Account Managers Team, makes decisions on suspension/revocation/continuation, approves revalidation requests, decides on appeal requests
+- **Key Account Manager:** Monitors AEO performance, manages control plan, logs violations, schedules monitoring meetings, raises revalidation requests
+- **Validation Team Member/Lead:** Conducts re-assessment and re-validation processes
+- **Appeals Officer:** Reviews appeal requests, schedules hearing sessions, provides recommendations
 
 #### AEO Portal (Commercial Establishment)
-- **Commercial Establishment Account Manager:** Confirms meeting dates, reviews assessment reports, manages compliance improvement plan
-- **Assessment Report Editor:** Reviews assessment reports, provides comments, uploads compliance improvement plan
+- **Commercial Establishment Account Manager:** Views and downloads certificates, submits appeal requests, confirms monitoring meeting dates
+- **Assessment Report Editor:** Participates in revalidation process when required
 
 ---
 
 ## Table of Contents
-1. [Local Customs Portal - Initial Risk Assessment](#local-customs-initial-risk-assessment)
-2. [Local Customs Portal - Assessment Plan Preparation](#local-customs-assessment-plan)
-3. [Local Customs Portal - Validation Meetings Management](#local-customs-validation-meetings)
-4. [AEO Portal - Meeting Coordination](#aeo-portal-meeting-coordination)
-5. [Local Customs Portal - On-Site Validation and Assessment File](#local-customs-assessment-file)
-6. [Local Customs Portal - Assessment Report Generation](#local-customs-assessment-report)
-7. [AEO Portal - Assessment Report Review](#aeo-portal-assessment-report-review)
-8. [Local Customs Portal - Final Decision and Control Plan](#local-customs-final-decision)
+1. [Federal Customs Portal - Key Account Team Assignment and Benefits](#federal-customs-key-account-assignment)
+2. [Federal Customs Portal - Certificate Issuance](#federal-customs-certificate-issuance)
+3. [AEO Portal - Certificate Viewing and Management](#aeo-portal-certificate-viewing)
+4. [Local Customs Portal - Key Account Management](#local-customs-key-account-management)
+5. [Local Customs Portal - Control Plan Monitoring](#local-customs-control-plan-monitoring)
+6. [Local Customs Portal - Re-validation Process](#local-customs-revalidation)
+7. [Local Customs Portal - Suspension and Revocation](#local-customs-suspension-revocation)
+8. [AEO Portal - Appeals Submission](#aeo-portal-appeals-submission)
+9. [Local Customs Portal - Appeals Management](#local-customs-appeals-management)
+10. [Federal Customs Portal - Appeals Escalation](#federal-customs-appeals-escalation)
 
 ---
 
-<a name="local-customs-initial-risk-assessment"></a>
-## 1. Local Customs Portal - Initial Risk Assessment
+<a name="federal-customs-key-account-assignment"></a>
+## 1. Federal Customs Portal - Key Account Team Assignment and Benefits
 
-### Epic: Initial Risk Assessment
-Enable the Validation Team to conduct initial risk assessment by reviewing the approved SAQ and identifying risks for each leaf section.
-
----
-
-### US-VAL-001: Initiate Initial Risk Assessment Process
-
-**As a** Validation Team Member  
-**I want to** access the approved SAQ to begin the initial risk assessment process  
-**So that** I can systematically review each section and identify potential risks
-
-**Acceptance Criteria:**
-1. System automatically sends notification to assigned Validation Team when SAQ is approved by Validation Team Lead `[SRD Section 6.3.4.2]`
-2. Validation Team Member can access the approved SAQ with all sections, subsections, leaf sections, and related questions and answers visible `[SRD Section 6.3.4.2]`
-3. System displays all SAQ sections to all validators assigned to the SAQ `[SRD Section 6.3.4.2]`
-4. System restricts editing capability so only the owner of each section can amend it `[SRD Section 6.3.4.2]`
-5. System creates "Initial Risk Assessment and Assessment Plan" with initial status "Draft" `[SRD Section 6.3.4.2.6]`
-6. For each leaf section of the SAQ, assigned Validation Team Member can:
-   - Add initial risks assessment
-   - Add assessment plan
-   - Upload reference documents
-   - Confirm completion of "initial risks and assessment plan" for the section
-   - Add comments to any section (including unassigned sections)
-   - View internal comments from other Validation Team members
-7. System allows users to identify the phase in which comments were added (SAQ review, initial risk assessment and assessment plan, on-site validation) `[SRD Section 6.3.4.2]`
-8. Users can reply to comments `[SRD Section 6.3.4.2]`
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Initial risk assessment process
-- **SRD:** Section 6.3.4.2 "Initial Risk Assessment and Assessment Plan Preparation", Pages 246-247
-
-**Dependencies:**
-- US-SAQ-026 (SAQ must be approved)
-
-**Priority:** Must Have
+### Epic: AEO Certification Process
+**Goal:** Enable AEO Program Manager to assign Key Account Managers Team and manage benefits for certified AEOs
 
 ---
 
-### US-VAL-002: Identify and Analyze Initial Risks
-
-**As a** Validation Team Member  
-**I want to** identify and analyze risks for each leaf section of the SAQ  
-**So that** potential compliance issues can be assessed and prioritized
-
-**Acceptance Criteria:**
-1. For each assigned leaf section, Validation Team Member can select one or more risks from predefined drop-down list `[SRD Section 6.3.4.2.1]`
-2. If relevant risk is not listed in the predefined list, user can add a new risk manually `[SRD Section 6.3.4.2.1]`
-3. System provides text field for user to enter brief analysis of the identified risks (Initial risks analysis) `[SRD Section 6.3.4.2.1]`
-4. System provides "Consequences" field with predefined single choice list: `[SRD Section 6.3.4.2.1]`
-   - Critical
-   - Major
-   - Moderate
-   - Minor
-   - Insignificant
-5. System provides "Likelihood" field with predefined single choice list: `[SRD Section 6.3.4.2.1]`
-   - Almost Certain
-   - Likely
-   - Possible
-   - Unlikely
-   - Rare
-6. After user selects both Consequences and Likelihood, system automatically calculates Risk Rate based on risk matrix `[SRD Section 6.3.4.2.1, 5.6]`
-7. Risk Rate is displayed using one of the following values:
-   - Extreme
-   - High
-   - Medium
-   - Low
-8. System provides "Assessment Tool" field as drop-down list `[SRD Section 6.3.4.2.1]`
-9. If required assessment tool is not listed, user can enter it manually in "Another Tool" text field `[SRD Section 6.3.4.2.1]`
-10. System provides "Response to the Risks" field with following predefined single choice options: `[SRD Section 6.3.4.2.1]`
-    - Take = within the acceptable materiality
-    - Treat = remedial plan or included in the control plan
-    - Transfer = set up a mechanism whereby an identified risk, for example related to classification or valuation, can be mitigated through a guarantee
-    - Terminate = rejecting the risk as unacceptable, which means rejecting the applicant for AEO status, in that case the decision is up to the local customs to reject the application
-11. All risk assessment data is saved with status "Draft" `[SRD Section 6.3.4.2.6]`
-12. System provides "Save as Draft" option to continue work later `[SRD Section 6.3.4.2.6]`
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Risk assessment methodology
-- **SRD:** Section 6.3.4.2.1 "Initial Risk Assessment", Section 5.6 "Initial Risk Assessment and Prepare Assessment Plan Data", Pages 71-75, 247-249
-
-**Dependencies:**
-- US-VAL-001
-
-**Priority:** Must Have
-
----
-
-### US-VAL-003: Prepare Assessment Plan for Each Leaf Section
-
-**As a** Validation Team Member  
-**I want to** prepare an assessment plan for each leaf section of the SAQ  
-**So that** the validation approach and required activities are clearly defined
-
-**Acceptance Criteria:**
-1. For each assigned leaf section, Validation Team Member can add assessment plan details `[SRD Section 6.3.4.2.2]`
-2. System provides "Assessment Method" field as multiple choice drop-down list (user can select one or more methods) `[SRD Section 6.3.4.2.2]`
-3. For each added assessment method, user can optionally enter: `[SRD Section 6.3.4.2.2]`
-   - Expected start date
-   - Expected duration (in days or hours)
-4. System automatically calculates and displays corresponding end date based on provided start date and duration `[SRD Section 6.3.4.2.2]`
-5. System provides "Description" text box for entering all relevant details about actions that need to be performed during validation phase `[SRD Section 6.3.4.2.2]`
-6. Assessment plan data is saved with status "Draft" `[SRD Section 6.3.4.2.6]`
-7. System provides "Save as Draft" option to continue work later
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Assessment plan preparation
-- **SRD:** Section 6.3.4.2.2 "Preparing the Assessment Plan", Section 5.6 "Initial Risk Assessment and Prepare Assessment Plan Data", Pages 71-75, 249-250
-
-**Dependencies:**
-- US-VAL-001
-
-**Priority:** Must Have
-
----
-
-### US-VAL-004: Attach Reference Documents to Support Risk Assessment
-
-**As a** Validation Team Member  
-**I want to** attach reference documents to support the risk assessment and assessment plan  
-**So that** the assessment is backed by relevant documentation
-
-**Acceptance Criteria:**
-1. For each leaf section, user can attach one or more reference documents to support risk assessment and assessment plan `[SRD Section 6.3.4.2.3]`
-2. For each reference document, system requires the following details: `[SRD Section 6.3.4.2.3, 5.6]`
-   - Document Type (mandatory)
-   - Document Name (mandatory)
-   - Document Version (optional)
-   - Release Date (optional)
-   - File Upload - the actual document file (mandatory, PDF, 5MB max)
-3. User can add multiple reference documents for each leaf section
-4. All required metadata must be provided for each document
-5. System saves reference documents with the assessment plan in "Draft" status
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Reference documentation for risk assessment
-- **SRD:** Section 6.3.4.2.3 "Adding Reference Documents", Section 5.6 "Initial Risk Assessment and Prepare Assessment Plan Data", Pages 71-75, 250
-
-**Dependencies:**
-- US-VAL-001, US-VAL-002, US-VAL-003
-
-**Priority:** Must Have
-
----
-
-### US-VAL-005: Confirm Completion of Initial Risk Assessment for Leaf Section
-
-**As a** Validation Team Member  
-**I want to** confirm completion of initial risk assessment and assessment plan for each leaf section  
-**So that** progress can be tracked and the Validation Team Lead knows when to review
-
-**Acceptance Criteria:**
-1. Validation Team Member/Lead can confirm completion of their work on each leaf section `[SRD Section 6.3.4.2.4]`
-2. Confirmation action indicates that the risks, assessment plan, and reference documents have been successfully identified for that specific leaf section `[SRD Section 6.3.4.2.4]`
-3. System marks the leaf section as "Complete" when user confirms completion
-4. System tracks which leaf sections are completed and which are pending
-5. System sends notification to Validation Team Lead when a leaf section is marked as complete `[SRD Section 6.3.4.2.7]`
-6. When all leaf sections are marked as complete by assigned Validation Team Members, system changes status to "Initial Risk Assessment and Assessment Plan Ready for Approval" `[SRD Section 6.3.4.2.6]`
-7. System sends notification to Validation Team Lead when all sections are complete and ready for approval `[SRD Section 6.3.4.2.7]`
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Completion tracking for initial risk assessment
-- **SRD:** Section 6.3.4.2.4 "Confirm the Completion of the 'Initial Risks and Assessment Plan'", Section 6.3.4.2.6 "Statuses of Assessment Plan", Section 6.3.4.2.7 "Notifications", Pages 250-252
-
-**Dependencies:**
-- US-VAL-001, US-VAL-002, US-VAL-003, US-VAL-004
-
-**Priority:** Must Have
-
----
-
-### US-VAL-006: Review and Approve Initial Risk Assessment and Assessment Plan
-
-**As a** Validation Team Lead  
-**I want to** review and approve the completed initial risk assessment and assessment plan  
-**So that** the validation process can proceed to the on-site validation phase
-
-**Acceptance Criteria:**
-1. System sends notification to Validation Team Lead when initial risk assessment and assessment plan is complete for all leaf sections `[SRD Section 6.3.4.2.5, 6.3.4.2.7]`
-2. Validation Team Lead can access and review the complete initial risk assessment and assessment plan
-3. Validation Team Lead can view all leaf sections with their associated:
-   - Initial risks identified
-   - Risk analysis
-   - Risk classification (consequences, likelihood, risk rate)
-   - Assessment tools
-   - Response to risks
-   - Assessment plan details
-   - Reference documents
-4. Validation Team Lead can make needed amendments before approving the plan `[SRD Section 6.3.4.2.5]`
-5. Validation Team Lead can edit any section of the initial risk assessment and assessment plan
-6. Once approved, system changes status from "Initial Risk Assessment and Assessment Plan Ready for Approval" to "Initial Risk Assessment and Assessment Plan Approved" `[SRD Section 6.3.4.2.6]`
-7. System sends notification to Validation Team that the initial risk assessment and assessment plan has been approved `[SRD Section 6.3.4.2.7]`
-8. Notification instructs Validation Team to begin the validation process (scheduling meetings and on-site validation) `[SRD Section 6.3.4.2.7]`
-9. System records status change in audit trail `[SRD Section 6.3.4.2.6]`
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Initial risk assessment approval process
-- **SRD:** Section 6.3.4.2.5 "Approving the Initial Risk Assessment and Assessment Plan", Section 6.3.4.2.6 "Statuses of Assessment Plan", Section 6.3.4.2.7 "Notifications", Pages 251-252
-
-**Dependencies:**
-- US-VAL-005
-
-**Priority:** Must Have
-
----
-
-<a name="local-customs-assessment-plan"></a>
-## 2. Local Customs Portal - Assessment Plan Preparation
-
-(Note: Assessment plan preparation user stories are covered in US-VAL-003 and US-VAL-004 as they are part of the same workflow with initial risk assessment)
-
-<a name="local-customs-validation-meetings"></a>
-## 3. Local Customs Portal - Validation Meetings Management
-
-### Epic: Validation Meetings Management
-Enable the Validation Team to schedule, manage, and document validation meetings with commercial establishments.
-
----
-
-### US-VAL-007: Schedule Validation Meetings
-
-**As a** Validation Team Member  
-**I want to** schedule validation meetings with the commercial establishment  
-**So that** on-site visits and remote meetings can be organized to verify compliance
-
-**Acceptance Criteria:**
-1. After approval of initial risk assessment and assessment plan, Validation Team Member/Lead can begin scheduling meetings `[SRD Section 6.3.4.3.1]`
-2. System provides meeting template dropdown for user to select appropriate template `[SRD Section 5.7]`
-3. When template is selected, system auto-populates following fields (which user can modify): `[SRD Section 5.7]`
-   - Meeting title
-   - Meeting purpose
-   - Agenda
-   - Documents/information to be reviewed
-4. System provides following mandatory fields for meeting scheduling: `[SRD Section 5.7]`
-   - Meeting Title (text)
-   - Meeting Purpose (multiple choice list)
-   - Site Visit? (Yes/No, default: Yes) - if "No" selected, meeting is remote
-   - Meeting Date (date)
-   - Start Time (time)
-   - Meeting Duration (multiple choice list)
-   - List of Validators (multiple choice list, mandatory)
-5. System provides optional fields: `[SRD Section 5.7]`
-   - Agenda (text)
-6. If Site Visit = Yes (field visit): `[SRD Section 5.7]`
-   - System displays "Address" field (single choice list, mandatory)
-   - Address list includes: main commercial establishment address, branch addresses from AEO authorization request, and additional facility addresses from establishment profile
-   - Address consists of: Address Type, Emirate, Area, Detailed Address
-   - System auto-generates and displays: Address Type, Emirate, Area, Detailed Address based on selected address
-   - System displays "Documents to be Prepared" field (text, optional)
-7. If Site Visit = No (remote meeting): `[SRD Section 5.7]`
-   - System displays "Meeting Details" field (text, mandatory) - information needed to join the meeting including meeting link
-8. System provides "Should Commercial Establishment Be Notified of This Meeting?" field (Yes/No, default: Yes, mandatory) `[SRD Section 5.7]`
-9. Validation Team Member/Lead selects up to three proposed dates for each meeting `[SRD Section 6.3.4.3.1]`
-10. When multiple dates are proposed, those dates cannot be reused for other commercial establishments until one is selected `[SRD Section 6.3.4.3.1]`
-11. Once a date is selected by commercial establishment, remaining unselected dates become available for reuse `[SRD Section 6.3.4.3.1]`
-12. Commercial establishment must be notified specific period before meeting date according to system settings (notification period) `[SRD Section 6.3.4.3.1, BR.26]`
-13. System does not allow scheduling any meeting with date earlier than the defined notification period `[SRD Section 6.3.4.3.1, BR.26]`
-14. If user chooses to notify commercial establishment, system sends notification with meeting details `[SRD Section 6.3.4.3.1]`
-15. Meeting remains in "Proposed" status until commercial establishment confirms a date
-
-**Business Rules:**
-- **BR.26:** When scheduling meetings whether field visits, remote meetings, or a hearing session for an appeal request, the commercial establishment shall be notified of a specific period in advance, as defined in the system settings. The system will not allow scheduling any meeting with a date earlier than the defined notification period.
-
-**Traceability:**
-- **BRD:** Validation meeting scheduling
-- **SRD:** Section 6.3.4.3.1 "Scheduling Meetings", Section 5.7 "Validation Meeting's Data", Pages 75-78, 252-254
-
-**Dependencies:**
-- US-VAL-006 (Initial risk assessment and assessment plan must be approved)
-
-**Priority:** Must Have
-
----
-
-### US-VAL-008: Manage Validation Team Shared Calendar
-
-**As a** Validation Team Member  
-**I want to** view and manage appointments in a shared team calendar  
-**So that** all team members can see scheduled meetings and avoid conflicts
-
-**Acceptance Criteria:**
-1. Once commercial establishment confirms meeting date, appointment is automatically recorded in visit scheduling calendar of validators team `[SRD Section 6.3.4.3.1]`
-2. Validators within same team have access to shared calendar showing all appointments scheduled by their team members `[SRD Section 6.3.4.3.1]`
-3. Shared calendar displays:
-   - Meeting date and time
-   - Meeting type (site visit or remote)
-   - Commercial establishment name
-   - Meeting purpose
-   - Assigned validators
-   - Meeting status (proposed/confirmed/completed/cancelled)
-4. Validators in same validation team are authorized to reschedule or cancel appointments assigned to any member of their team `[SRD Section 6.3.4.3.1]`
-5. Calendar provides day, week, and month views
-6. System highlights conflicts or overlapping meetings for same validator
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Team coordination and calendar management
-- **SRD:** Section 6.3.4.3.1 "Scheduling Meetings", Pages 252-254
-
-**Dependencies:**
-- US-VAL-007
-
-**Priority:** Must Have
-
----
-
-### US-VAL-009: Cancel or Reschedule Validation Meetings
-
-**As a** Validation Team Member  
-**I want to** cancel or reschedule validation meetings  
-**So that** meetings can be adjusted when circumstances change
-
-**Acceptance Criteria:**
-1. System allows relevant customs department to cancel or reschedule any meeting `[SRD Section 6.3.4.3.1]`
-2. If meeting is cancelled, system requires user to specify reason for cancellation (mandatory) `[SRD Section 5.7, 6.3.4.3.1]`
-3. System provides "Reason for Meeting Cancellation" text field (mandatory when cancelling)
-4. If meeting is rescheduled:
-   - User can modify meeting date, time, duration, and other details
-   - System sends notification to commercial establishment if meeting notification was enabled
-   - System applies same notification period rules as initial scheduling (BR.26)
-5. System sends notification to commercial establishment when meeting is cancelled `[SRD Section 6.2.5.6]`
-6. System sends notification to commercial establishment when meeting is rescheduled `[SRD Section 6.2.5.6]`
-7. Commercial establishment can view meeting status (cancelled/rescheduled) in their portal
-8. System updates shared team calendar with cancellation or new meeting details
-9. If meeting was cancelled, the proposed dates become available for reuse with other establishments
-
-**Business Rules:**
-- **BR.26:** System will not allow scheduling any meeting with a date earlier than the defined notification period
-
-**Traceability:**
-- **BRD:** Meeting cancellation and rescheduling
-- **SRD:** Section 6.3.4.3.1 "Scheduling Meetings", Section 5.7 "Validation Meeting's Data", Section 6.2.5.6 "Notifications", Pages 75-78, 201-202, 252-254
-
-**Dependencies:**
-- US-VAL-007
-
-**Priority:** Must Have
-
----
-
-### US-VAL-010: Record Meeting Minutes and Observations
-
-**As a** Validation Team Member  
-**I want to** record meeting minutes and observations after validation meetings  
-**So that** findings from meetings are documented for the assessment file
-
-**Acceptance Criteria:**
-1. After meeting is held, Validation Team Member/Lead can record observations and meeting outcomes in meeting minutes `[SRD Section 6.3.4.3.1]`
-2. System provides "Minutes of Meeting" text field (mandatory) `[SRD Section 5.7]`
-3. Meeting minutes field allows entry of:
-   - Meeting details
-   - Observations made during the visit
-   - Findings discovered
-   - Documents reviewed
-   - Attendees
-   - Any issues or non-conformances identified
-4. System allows user to upload supporting documents or photos from the visit (optional)
-5. Once meeting minutes are recorded, meeting status changes to "Completed"
-6. Completed meeting minutes are accessible to all validation team members
-7. Meeting minutes feed into the assessment file for the relevant leaf sections
-8. System records completion in audit trail
-9. All validation team members can view meeting minutes for meetings conducted by their team
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Meeting documentation
-- **SRD:** Section 6.3.4.3.1 "Scheduling Meetings", Section 5.7 "Validation Meeting's Data", Pages 75-78, 252-254
-
-**Dependencies:**
-- US-VAL-007
-
-**Priority:** Must Have
-
----
-
-### US-VAL-011: Generate Official Meeting Letter
-
-**As a** Validation Team Lead  
-**I want to** generate an official letter with meeting details to send to the commercial establishment  
-**So that** formal communication about validation meetings is provided
-
-**Acceptance Criteria:**
-1. After commercial establishment confirms meeting dates, system issues official letter addressed to the commercial establishment `[SRD Section 6.3.4.3.1]`
-2. Official letter includes following meeting details: `[SRD Section 6.3.4.3.1]`
-   - Meeting date
-   - Meeting time
-   - Purpose of each meeting
-   - Required documents to be prepared
-   - Meeting location (if site visit) or meeting link (if remote)
-   - List of validators who will attend
-3. System auto-generates letter using predefined template
-4. Letter is formatted professionally with official customs department letterhead
-5. Validation Team Lead can review letter before it is sent
-6. System sends letter via email to commercial establishment account manager and assessment report editors
-7. Letter is also available for download in the commercial establishment's portal
-8. System records letter generation in audit trail
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Official meeting communication
-- **SRD:** Section 6.3.4.3.1 "Scheduling Meetings", Pages 252-254
-
-**Dependencies:**
-- US-VAL-007
-
-**Priority:** Must Have
-
----
-
-<a name="aeo-portal-meeting-coordination"></a>
-## 4. AEO Portal - Meeting Coordination
-
-### Epic: Meeting Coordination (Commercial Establishment)
-Enable the commercial establishment to respond to meeting invitations and coordinate validation meetings.
-
----
-
-### US-VAL-012: Respond to Validation Meeting Invitations
-
-**As a** Commercial Establishment Account Manager  
-**I want to** select preferred dates from proposed meeting time slots  
-**So that** validation meetings can be scheduled at convenient times
-
-**Acceptance Criteria:**
-1. When relevant customs department schedules meetings and chooses to notify commercial establishment, system sends notification `[SRD Section 6.2.5.1]`
-2. Notification is sent via email and displayed in AEO Portal `[SRD Section 6.2.5.6]`
-3. Notification recipients include: Commercial Establishment Account Manager and Assessment Report Editors `[SRD Section 6.2.5.6]`
-4. System displays meeting invitation with up to three proposed date/time slots for each meeting `[SRD Section 6.2.5.1]`
-5. Commercial Establishment Account Manager or Assessment Report Editor can select one preferred date from proposed options `[SRD Section 6.2.5.1]`
-6. User can reject all proposed options `[SRD Section 6.2.5.1]`
-7. If user rejects proposed meetings, customs authority can provide new set of proposed timings `[SRD Section 6.2.5.1]`
-8. If commercial establishment rejects suggested meetings two times, escalation notification is sent to program manager `[SRD Section 6.3.4.3.1, 6.3.4.4.5]`
-9. System provides allowed response period for commercial establishment to respond to meeting invitation
-10. If commercial establishment does not respond within allowed response period, meetings are rejected automatically `[SRD Section 6.2.5.1]`
-11. System sends notification to both validation team and commercial establishment when meetings are automatically rejected `[SRD Section 6.2.5.1]`
-12. Once user confirms selected date, system sends confirmation notification via email and AEO Portal `[SRD Section 6.2.5.6]`
-13. Confirmed meetings are reflected in validators calendar with all relevant meeting details `[SRD Section 6.2.5.1]`
-14. Commercial establishment can view all scheduled, confirmed, and completed meetings in their portal
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Commercial establishment meeting coordination
-- **SRD:** Section 6.2.5.1 "Confirming meeting dates", Section 6.3.4.3.1 "Scheduling Meetings", Section 6.3.4.4.5 "Notifications", Section 6.2.5.6 "Notifications", Pages 192-193, 201-202, 252-254, 268-269
-
-**Dependencies:**
-- US-VAL-007
-
-**Priority:** Must Have
-
----
-
-### US-VAL-013: View Meeting Schedule and Details
-
-**As a** Commercial Establishment Account Manager  
-**I want to** view the complete meeting schedule and details  
-**So that** I can prepare appropriately for validation meetings
-
-**Acceptance Criteria:**
-1. Commercial Establishment Account Manager and Assessment Report Editors can view meeting schedule in AEO Portal
-2. Meeting schedule displays:
-   - Meeting date and time
-   - Meeting type (site visit or remote)
-   - Meeting purpose
-   - Meeting agenda
-   - Required documents to prepare
-   - Meeting location (if site visit) or meeting link (if remote)
-   - List of validators who will attend
-   - Meeting status (proposed/confirmed/completed/cancelled)
-3. System provides calendar view showing all upcoming meetings
-4. User can download official meeting letter sent by customs department
-5. System highlights upcoming meetings that require preparation
-6. User can set reminders for upcoming meetings
-7. For remote meetings, meeting link is accessible directly from the meeting details page
-8. System displays notifications for meeting cancellations or rescheduling
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Meeting schedule visibility for commercial establishment
-- **SRD:** Section 6.2.5.1 "Confirming meeting dates", Section 6.3.4.3.1 "Scheduling Meetings", Pages 192-193, 252-254
-
-**Dependencies:**
-- US-VAL-007, US-VAL-012
-
-**Priority:** Must Have
-
----
-
-<a name="local-customs-assessment-file"></a>
-## 5. Local Customs Portal - On-Site Validation and Assessment File
-
-### Epic: On-Site Validation and Assessment File Creation
-Enable the Validation Team to conduct on-site validation and develop a comprehensive assessment file documenting findings, recommendations, and remaining risks.
-
----
-
-### US-VAL-014: Conduct On-Site Validation
-
-**As a** Validation Team Member  
-**I want to** conduct on-site validation according to the approved assessment plan  
-**So that** the commercial establishment's compliance can be verified through direct observation
-
-**Acceptance Criteria:**
-1. After approval of initial risk assessment and assessment plan, system changes status to "Commercial Establishment On-Site Validation" `[SRD Section 6.3.4.4.4]`
-2. Validation Team Member/Lead can execute assessment plan by conducting scheduled meetings
-3. During on-site validation, Validation Team Member/Lead can:
-   - Visit commercial establishment facilities
-   - Review documents and records
-   - Interview personnel
-   - Observe operational procedures
-   - Verify information provided in SAQ
-   - Identify any discrepancies or non-conformances
-4. System provides access to:
-   - Complete SAQ with all responses
-   - Initial risk assessment for each leaf section
-   - Assessment plan details
-   - Meeting minutes from previous meetings
-5. System records status "Commercial Establishment On-Site Validation" in audit trail `[SRD Section 6.3.4.4.4]`
-6. Status remains "Commercial Establishment On-Site Validation" until validation team confirms adding all findings, recommendations, and remaining risks to assessment file `[SRD Section 6.3.4.4.4]`
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** On-site validation execution
-- **SRD:** Section 6.3.4.3 "Detailed Validation and Risk Assessment", Section 6.3.4.4.4 "Statuses of Validation Process", Pages 252-256, 263-264
-
-**Dependencies:**
-- US-VAL-006, US-VAL-007, US-VAL-010
-
-**Priority:** Must Have
-
----
-
-### US-VAL-015: Develop Assessment File with Remaining Risks
-
-**As a** Validation Team Member  
-**I want to** prepare the assessment file by reviewing and updating risks based on on-site observations  
-**So that** the final risk profile accurately reflects the validation findings
-
-**Acceptance Criteria:**
-1. During validation process, Validation Team Member/Lead prepares assessment file by reviewing initial risks and verifying relevance based on on-site observations `[SRD Section 6.3.4.3.2]`
-2. System displays all SAQ sections to all validators assigned to SAQ `[SRD Section 6.3.4.3.2]`
-3. System restricts editing so only owner of each section can amend it `[SRD Section 6.3.4.3.2]`
-4. For each assigned leaf section, Validation Team Member can define list of remaining risks by: `[SRD Section 6.3.4.3.2]`
-   - Removing risks that are no longer applicable
-   - Adding newly observed risks
-   - Modifying existing risks, including updates to risk analysis, likelihood, consequences, or mitigation measures
-5. When risk likelihood or consequences are changed, system automatically re-calculates risk rate `[SRD Section 6.3.4.3.2]`
-6. System preserves original list of risks from initial assessment unchanged and generates separate list for remaining risks `[SRD Section 6.3.4.3.2]`
-7. For remaining risks, system provides following fields: `[SRD Section 5.8]`
-   - Remaining Risks (multiple choice list from predefined risks, optional)
-   - Remaining Risks Analysis (text, description of remaining risks analysis, optional)
-   - Consequences (single choice list: Critical/Major/Moderate/Minor/Insignificant, mandatory if remaining risks are selected)
-   - Likelihood (single choice list: Almost Certain/Likely/Possible/Unlikely/Rare, mandatory if remaining risks are selected)
-   - Remaining Risk Rate (automatically generated: Extreme/High/Medium/Low based on consequences and likelihood)
-   - Respond to Remaining Risks (single choice list: Tolerate/Treat/Transfer/Terminate, mandatory if risks are selected)
-8. Assessment file data follows structure defined in data dictionary "Assessment File Data" `[SRD Section 6.3.4.3.2, 5.8]`
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Assessment file development with risk updates
-- **SRD:** Section 6.3.4.3.2 "The Development of the Assessment File", Section 5.8 "Assessment's File Data", Pages 78-81, 254-256
-
-**Dependencies:**
-- US-VAL-014
-
-**Priority:** Must Have
-
----
-
-### US-VAL-016: Record Findings in Assessment File
-
-**As a** Validation Team Member  
-**I want to** record findings for each leaf section based on validation observations  
-**So that** specific issues and observations are documented in the assessment file
-
-**Acceptance Criteria:**
-1. System allows user to enter multiple findings under each leaf section `[SRD Section 6.3.4.3.2]`
-2. For each finding, system provides following fields: `[SRD Section 5.8]`
-   - Title (text, short title summarizing the observation, mandatory)
-   - Content (text, detailed description of the risk assessment findings based on validation process, clarifying extent to which information provided in SAQ aligns with actual situation, mandatory)
-   - Finding Evidence (document, uploaded by validation team if there is supporting document for findings, optional)
-3. User can add multiple findings per leaf section
-4. Each finding is associated with the specific leaf section where it was identified
-5. Findings capture:
-   - Non-conformances with AEO requirements
-   - Discrepancies between SAQ responses and actual observations
-   - Areas requiring improvement
-   - Positive observations of good practices
-6. System maintains chronological record of when each finding was added
-7. Validation Team Member can edit or delete findings they have added
-8. All findings are visible to all validation team members assigned to the SAQ
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Findings documentation
-- **SRD:** Section 6.3.4.3.2 "The Development of the Assessment File", Section 5.8 "Assessment's File Data", Pages 78-81, 254-256
-
-**Dependencies:**
-- US-VAL-014, US-VAL-015
-
-**Priority:** Must Have
-
----
-
-### US-VAL-017: Enter Recommendations in Assessment File
-
-**As a** Validation Team Member  
-**I want to** enter recommendations for each leaf section  
-**So that** specific actions or changes needed for AEO compliance are documented
-
-**Acceptance Criteria:**
-1. System supports entering multiple recommendations per leaf section `[SRD Section 6.3.4.3.2]`
-2. For each recommendation, system provides following fields: `[SRD Section 5.8]`
-   - Title (text, short title summarizing the recommendation based on validation process, mandatory)
-   - Content (text, detailed description of any changes, actions, or requirements needed for applicant to meet AEO criteria in UAE, mandatory)
-3. User can add multiple recommendations per leaf section
-4. Each recommendation is associated with the specific leaf section where improvement is needed
-5. Recommendations include:
-   - Corrective actions for non-conformances
-   - Improvement suggestions for areas that don't fully meet standards
-   - Enhancement opportunities for better compliance
-   - Implementation guidance
-6. System maintains record of when each recommendation was added
-7. Validation Team Member can edit or delete recommendations they have added
-8. All recommendations are visible to all validation team members assigned to the SAQ
-9. If there are remarks that do not affect decision-making process (i.e., improvement actions), they are included under recommendations `[SRD Section 6.3.4.3.4]`
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Recommendations documentation
-- **SRD:** Section 6.3.4.3.2 "The Development of the Assessment File", Section 5.8 "Assessment's File Data", Section 6.3.4.3.4 "The Development of the Assessment Report", Pages 78-81, 254-257
-
-**Dependencies:**
-- US-VAL-014, US-VAL-015, US-VAL-016
-
-**Priority:** Must Have
-
----
-
-### US-VAL-018: Add Comments During On-Site Validation
-
-**As a** Validation Team Member  
-**I want to** add internal comments to any section during on-site validation  
-**So that** team communication and collaboration is facilitated
-
-**Acceptance Criteria:**
-1. Validation Team Member can add comments to any section, including sections not assigned to them `[SRD Section 6.3.4.3.2]`
-2. System allows user to identify phase in which comments were added: `[SRD Section 6.3.4.3.2]`
-   - SAQ review phase
-   - Initial risk assessment and assessment plan phase
-   - On-site validation phase
-3. User can reply to comments added by other Validation Team members `[SRD Section 6.3.4.3.2]`
-4. Comments are visible only to validation team members (not visible to commercial establishment)
-5. Each comment includes:
-   - Comment text
-   - Author name and role
-   - Timestamp
-   - Phase/context identifier
-   - Parent comment (if it's a reply)
-6. System displays comments in chronological order
-7. Users receive notification when comments are added to their assigned sections
-8. System maintains comment history in audit trail
-9. Comments facilitate internal team discussions about findings, recommendations, and assessment approach
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Internal team collaboration
-- **SRD:** Section 6.3.4.3.2 "The Development of the Assessment File", Pages 254-256
-
-**Dependencies:**
-- US-VAL-014
-
-**Priority:** Must Have
-
----
-
-### US-VAL-019: Confirm Completion of Assessment File for Leaf Section
-
-**As a** Validation Team Member  
-**I want to** confirm completion of the assessment file for each leaf section  
-**So that** progress can be tracked and the Validation Team Lead knows when all sections are ready for approval
-
-**Acceptance Criteria:**
-1. Validation Team Member/Lead can confirm completion of their work on each leaf section `[SRD Section 6.3.4.3.2]`
-2. Confirmation action indicates that remaining risks, findings, and recommendations have been successfully identified for that specific leaf section `[SRD Section 6.3.4.3.2]`
-3. System marks the leaf section as "Complete" in the assessment file
-4. System tracks which leaf sections are completed and which are pending
-5. When validation team confirms adding all findings, recommendations, and remaining risks to assessment file for all leaf sections, system changes status to "Assessment File Ready for Approval" `[SRD Section 6.3.4.4.4]`
-6. System sends notification to Validation Team Lead that assessment file is ready for approval `[SRD Section 6.3.4.4.5]`
-7. System records status change in audit trail `[SRD Section 6.3.4.4.4]`
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Assessment file completion tracking
-- **SRD:** Section 6.3.4.3.2 "The Development of the Assessment File", Section 6.3.4.4.4 "Statuses of Validation Process", Section 6.3.4.4.5 "Notifications", Pages 254-256, 263-264, 268-269
-
-**Dependencies:**
-- US-VAL-015, US-VAL-016, US-VAL-017
-
-**Priority:** Must Have
-
----
-
-### US-VAL-020: Review and Approve Assessment File
-
-**As a** Validation Team Lead  
-**I want to** review and approve the completed assessment file  
-**So that** the assessment report can be generated
-
-**Acceptance Criteria:**
-1. Once all leaf sections are marked as complete, system sends notification to Validation Team Lead to approve assessment file `[SRD Section 6.3.4.3.3]`
-2. Validation Team Lead can access and review complete assessment file including:
-   - All remaining risks for each leaf section
-   - All findings documented
-   - All recommendations provided
-   - Internal comments from validation team
-3. Validation Team Lead can edit the file and make needed changes before approving it `[SRD Section 6.3.4.3.3]`
-4. Validation Team Lead can:
-   - Modify remaining risks, findings, or recommendations
-   - Add additional findings or recommendations
-   - Request changes from validation team members
-5. Once Validation Team Lead approves assessment file, system changes status from "Assessment File Ready for Approval" to "Assessment File Approved" `[SRD Section 6.3.4.4.4]`
-6. System records approval in audit trail `[SRD Section 6.3.4.4.4]`
-7. Once assessment file is approved, system automatically generates "Assessment Report" in "Draft" status `[SRD Section 6.3.4.3.3]`
-8. Assessment Report becomes accessible by validation team `[SRD Section 6.3.4.3.3]`
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Assessment file approval
-- **SRD:** Section 6.3.4.3.3 "Approve the Assessment File", Section 6.3.4.4.4 "Statuses of Validation Process", Pages 255-256, 263-264
-
-**Dependencies:**
-- US-VAL-019
-
-**Priority:** Must Have
-
----
-
-<a name="local-customs-assessment-report"></a>
-## 6. Local Customs Portal - Assessment Report Generation
-
-### Epic: Assessment Report Generation and Approval
-Enable the Validation Team to generate, review, and share the assessment report with the commercial establishment.
-
----
-
-### US-VAL-021: Generate Draft Assessment Report
-
-**As a** Validation Team Member  
-**I want to** generate a draft assessment report from the approved assessment file  
-**So that** findings, recommendations, and risks can be compiled into a formal report
-
-**Acceptance Criteria:**
-1. Once assessment file is approved by Validation Team Lead, system automatically generates "Assessment Report" in "Draft" status `[SRD Section 6.3.4.3.4]`
-2. Assessment Report becomes accessible by validation team `[SRD Section 6.3.4.3.4]`
-3. System auto-populates assessment report with following sections: `[SRD Section 6.3.4.3.4, 5.9]`
-   - Details of headquarter and all branches included in validation process (auto-populated from commercial establishment profile)
-   - Report scope (to be added by validation team)
-   - Findings (auto-populated from assessment file using same structure as SAQ)
-   - Recommendations (auto-populated from assessment file using same structure as SAQ)
-   - Risks (auto-populated from assessment file using same structure as SAQ)
-   - Summary of observations (to be added by validation team)
-4. Assessment report includes complete commercial establishment details: `[SRD Section 5.9]`
-   - Commercial establishment name (Arabic and English, read-only)
-   - Emirate (read-only)
-   - Legal form (read-only)
-   - License issuer (read-only)
-   - And other establishment data as per data dictionary
-5. If there are remarks that do not affect decision-making process (improvement actions), they are included under recommendations `[SRD Section 6.3.4.3.4]`
-6. Detailed data of assessment report is described in data dictionary "Assessment Report Data" `[SRD Section 6.3.4.3.4, 5.9]`
-7. System organizes findings, recommendations, and risks by SAQ structure (sections, subsections, leaf sections)
-8. Validation team can save assessment report as draft to continue working on it later `[SRD Section 6.3.4.3.4]`
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Assessment report generation
-- **SRD:** Section 6.3.4.3.4 "The Development of the Assessment Report", Section 5.9 "Assessment Report Data", Pages 81-88, 256-257
-
-**Dependencies:**
-- US-VAL-020
-
-**Priority:** Must Have
-
----
-
-### US-VAL-022: Complete Assessment Report Content
-
-**As a** Validation Team Member  
-**I want to** add report scope and summary of observations to the draft assessment report  
-**So that** the report provides complete context and conclusions
-
-**Acceptance Criteria:**
-1. Validation Team Member can add "Report Scope" to assessment report `[SRD Section 6.3.4.3.4]`
-2. Report scope describes:
-   - Validation objectives
-   - Scope of assessment (which areas/activities were assessed)
-   - Assessment period
-   - Methodology used
-   - Limitations or constraints
-3. Validation Team Member can add "Summary of Observations" to assessment report `[SRD Section 6.3.4.3.4]`
-4. Summary of observations includes:
-   - Overall assessment conclusion
-   - Key findings and their significance
-   - Major risks identified
-   - Critical recommendations
-   - Overall compliance level
-5. System allows multiple team members to collaborate on report content
-6. Validation Team can save report as draft at any time `[SRD Section 6.3.4.3.4]`
-7. Once all mandatory fields are filled in, validation team can submit assessment report to Validation Team Lead to share with commercial establishment `[SRD Section 6.3.4.3.4]`
-8. System validates that all required sections are completed before allowing submission
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Assessment report content completion
-- **SRD:** Section 6.3.4.3.4 "The Development of the Assessment Report", Pages 256-257
-
-**Dependencies:**
-- US-VAL-021
-
-**Priority:** Must Have
-
----
-
-### US-VAL-023: Determine Content to Share with Commercial Establishment
-
-**As a** Validation Team Lead  
-**I want to** determine which contents of the draft assessment report should be shared with the commercial establishment  
-**So that** sensitive or confidential information can be excluded from the shared version
-
-**Acceptance Criteria:**
-1. Once assessment report is submitted to Validation Team Lead for sharing, system allows Validation Team Lead to review report before sharing `[SRD Section 6.3.4.3.5]`
-2. Validation Team Lead can determine certain contents that are not to be shared with establishment: `[SRD Section 6.3.4.3.5]`
-   - Findings: possibility to remove some or all
-   - Recommendations: possibility of removing some or all
-   - Risks: possibility of removing some or all
-3. System provides interface for Validation Team Lead to select which findings, recommendations, and risks to include or exclude
-4. System creates two versions of report:
-   - Internal version (complete report with all findings, recommendations, and risks)
-   - Shared version (report with selected content for commercial establishment)
-5. For each trade license included in report, Validation Team Lead assesses whether commercial establishment is required to undertake corrective actions `[SRD Section 6.3.4.3.5]`
-6. Validation Team Lead can provide specific remarks for any trade license identified as requiring submission of Compliance Improvement Plan `[SRD Section 6.3.4.3.5]`
-7. System allows Validation Team Lead to indicate for each trade license:
-   - Whether Compliance Improvement Plan is required (Yes/No)
-   - Specific remarks about required corrective actions
-8. System preserves complete internal version for customs department records
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Assessment report content control
-- **SRD:** Section 6.3.4.3.5 "Sharing the Assessment Report with the Commercial Establishment", Pages 257-258
-
-**Dependencies:**
-- US-VAL-022
-
-**Priority:** Must Have
-
----
-
-### US-VAL-024: Share Draft Assessment Report with Commercial Establishment
-
-**As a** Validation Team Lead  
-**I want to** share the draft assessment report with the commercial establishment  
-**So that** they can review findings and provide feedback or corrective action plans
-
-**Acceptance Criteria:**
-1. After Validation Team Lead determines content to share, system allows sharing of draft assessment report with commercial establishment `[SRD Section 6.3.4.3.5, 6.3.4.3.6]`
-2. System changes status from "Assessment File Approved" to "Draft Assessment Report Shared" `[SRD Section 6.3.4.4.4]`
-3. System sends notification to commercial establishment via email and AEO Portal `[SRD Section 6.2.5.2, 6.2.5.6]`
-4. Notification recipients include: Commercial Establishment Account Manager and all Assessment Report Editors `[SRD Section 6.2.5.2, 6.2.5.6]`
-5. Draft assessment report contains findings and recommendations related to observations made during validation process `[SRD Section 6.2.5.2]`
-6. Report clearly indicates for each trade license whether Compliance Improvement Plan is required
-7. If Compliance Improvement Plan is required, report includes specific remarks about required corrective actions
-8. System records sharing action in audit trail `[SRD Section 6.3.4.4.4]`
-9. Commercial establishment can access shared draft assessment report in their portal
-10. Report is provided in read-only format for commercial establishment
-11. System provides deadline for commercial establishment to respond to draft assessment report
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Assessment report sharing
-- **SRD:** Section 6.3.4.3.5 "Sharing the Assessment Report with the Commercial Establishment", Section 6.3.4.3.6 "Approving the Assessment Report", Section 6.3.4.4.4 "Statuses of Validation Process", Section 6.2.5.2 "Reviewing of Draft Assessment Report", Section 6.2.5.6 "Notifications", Pages 193-194, 201-202, 257-258, 263-264
-
-**Dependencies:**
-- US-VAL-023
-
-**Priority:** Must Have
-
----
-
-<a name="aeo-portal-assessment-report-review"></a>
-## 7. AEO Portal - Assessment Report Review
-
-### Epic: Assessment Report Review and Response (Commercial Establishment)
-Enable the commercial establishment to review the draft assessment report, provide feedback, and submit compliance improvement plans if required.
-
----
-
-### US-VAL-025: Review Draft Assessment Report
-
-**As a** Commercial Establishment Account Manager  
-**I want to** review the draft assessment report shared by customs  
-**So that** I can understand the validation findings and determine necessary actions
-
-**Acceptance Criteria:**
-1. When customs department shares draft assessment report, notification is sent to Commercial Establishment Account Manager and all Assessment Report Editors `[SRD Section 6.2.5.2]`
-2. Notification is sent via email and displayed in AEO Portal `[SRD Section 6.2.5.6]`
-3. Draft assessment report is accessible in AEO Portal
-4. Users can view following sections of report: `[SRD Section 6.2.5.2]`
-   - Commercial establishment details
-   - Report scope
-   - Findings related to observations during validation
-   - Recommendations
-   - Risks
-   - Summary of observations
-   - Indication of whether Compliance Improvement Plan is required for each trade license
-   - Specific remarks about required corrective actions (if applicable)
-5. Report is organized by SAQ structure (sections, subsections, leaf sections)
-6. Users can navigate through different sections of the report
-7. System highlights findings and recommendations that require attention
-8. Users can download copy of draft assessment report
-9. System displays deadline for responding to draft assessment report
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Assessment report review by commercial establishment
-- **SRD:** Section 6.2.5.2 "Reviewing of Draft Assessment Report", Section 6.2.5.6 "Notifications", Pages 193-194, 201-202
-
-**Dependencies:**
-- US-VAL-024
-
-**Priority:** Must Have
-
----
-
-### US-VAL-026: Provide Comments on Draft Assessment Report
-
-**As a** Commercial Establishment Account Manager  
-**I want to** add comments on the draft assessment report  
-**So that** I can provide feedback or clarifications to customs department
-
-**Acceptance Criteria:**
-1. If user has comments on draft report, system allows adding comments `[SRD Section 6.2.5.2]`
-2. Users can add comments on each section (leaf) of draft report `[SRD Section 6.2.5.2]`
-3. Users can provide general feedback on overall report `[SRD Section 6.2.5.2]`
-4. Comment functionality includes:
-   - Comment text field
-   - Section/finding reference
-   - Supporting documents upload (optional)
-5. Multiple users (Commercial Establishment Account Manager and Assessment Report Editors) can add comments
-6. Comments can address:
-   - Disagreements with findings
-   - Additional context or explanations
-   - Clarifications about establishment practices
-   - Questions about recommendations
-7. After adding comments, user can return draft assessment report to customs department `[SRD Section 6.2.5.2]`
-8. System sends notification to Validation Team when report is returned with comments `[SRD Section 6.2.5.6, 6.3.4.4.5]`
-9. System records return action in audit trail
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Commercial establishment feedback on assessment report
-- **SRD:** Section 6.2.5.2 "Reviewing of Draft Assessment Report", Section 6.2.5.6 "Notifications", Section 6.3.4.4.5 "Notifications", Pages 193-194, 201-202, 268-269
-
-**Dependencies:**
-- US-VAL-025
-
-**Priority:** Must Have
-
----
-
-### US-VAL-027: Upload Compliance Improvement Plan
-
-**As a** Commercial Establishment Account Manager  
-**I want to** upload a Compliance Improvement Plan for corrective actions  
-**So that** required improvements can be implemented and verified
-
-**Acceptance Criteria:**
-1. If Compliance Improvement Plan is required (indicated in draft assessment report), eligible user can upload plan `[SRD Section 6.2.5.2, 5.9]`
-2. System displays indication that Compliance Improvement Plan is required for specific trade license(s)
-3. Commercial establishment needs to upload separate Compliance Improvement Plan for each trade license that requires corrective actions `[SRD Section 5.9]`
-4. For uploading Compliance Improvement Plan, system provides: `[SRD Section 5.9]`
-   - File upload field (PDF, 5MB max, mandatory)
-   - Implementation Deadline field (number of days required to implement corrective actions, mandatory)
-5. System automatically calculates and displays expected date for completion based on implementation deadline `[SRD Section 5.9]`
-6. Compliance Improvement Plan should address:
-   - Specific findings requiring corrective action
-   - Detailed action plan for each issue
-   - Responsible parties
-   - Resources required
-   - Timeline for implementation
-7. System allows uploading plan whether user agrees or has comments on draft report `[SRD Section 6.2.5.2]`
-8. If user agrees on draft report and Compliance Improvement Plan is required: `[SRD Section 6.2.5.2]`
-   - User uploads Compliance Improvement Plan along with implementation period
-   - User approves the report
-   - Compliance Improvement Plan is sent to customs department for review
-9. If user has comments on draft report and Compliance Improvement Plan is required: `[SRD Section 6.2.5.2]`
-   - User can optionally upload Compliance Improvement Plan along with implementation period
-   - User can add comments and return report to customs
-10. System validates file format and size before accepting upload
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Compliance Improvement Plan submission
-- **SRD:** Section 6.2.5.2 "Reviewing of Draft Assessment Report", Section 5.9 "Assessment Report Data", Pages 86-87, 193-194
-
-**Dependencies:**
-- US-VAL-025
-
-**Priority:** Must Have
-
----
-
-### US-VAL-028: Approve Draft Assessment Report
-
-**As a** Commercial Establishment Account Manager  
-**I want to** approve the draft assessment report  
-**So that** the validation process can proceed to final decision phase
-
-**Acceptance Criteria:**
-1. If user agrees on draft report, system allows approval `[SRD Section 6.2.5.2]`
-2. Two approval scenarios:
-   
-   **Scenario A - Compliance Improvement Plan Not Required:** `[SRD Section 6.2.5.2]`
-   - Eligible users approve the report
-   - Status changes to status reflecting approval and readiness for final decision
-   
-   **Scenario B - Compliance Improvement Plan Required:** `[SRD Section 6.2.5.2]`
-   - Eligible user uploads Compliance Improvement Plan along with implementation period
-   - Eligible users approve the report
-   - Compliance Improvement Plan is sent to customs department for review
-3. System sends notification to customs department when report is approved `[SRD Section 6.2.5.6, 6.3.4.4.5]`
-4. Notification recipients include Validation Team and AEO Program Manager
-5. Only authorized users (Commercial Establishment Account Manager) can approve report
-6. System validates that Compliance Improvement Plan is uploaded (if required) before allowing approval
-7. System records approval in audit trail
-8. After approval, report becomes read-only for commercial establishment
-9. System updates status to reflect commercial establishment's approval
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Assessment report approval by commercial establishment
-- **SRD:** Section 6.2.5.2 "Reviewing of Draft Assessment Report", Section 6.2.5.6 "Notifications", Section 6.3.4.4.5 "Notifications", Pages 193-194, 201-202, 268-269
-
-**Dependencies:**
-- US-VAL-025
-
-**Priority:** Must Have
-
----
-
-### US-VAL-029: Submit Request to Extend Compliance Improvement Plan Deadline
-
-**As a** Commercial Establishment Account Manager  
-**I want to** submit a justified extension request for the Compliance Improvement Plan implementation deadline  
-**So that** additional time can be granted if needed for completing corrective actions
-
-**Acceptance Criteria:**
-1. If commercial establishment cannot complete implementation of Compliance Improvement Plan within period, system allows submitting extension request `[SRD Section 6.3.4.4, 5.9]`
-2. Extension request must be submitted to relevant customs department before deadline `[SRD Section 6.3.4.4]`
-3. System provides following fields for extension request: `[SRD Section 5.9]`
-   - Justification for Extension Request (text, description of justifications, mandatory)
-   - Document Name (text, identification name of supporting documents, optional)
-   - Document (file upload, supporting documents for extension request, PDF, 5MB, optional)
-4. System validates that request is submitted before current deadline expires
-5. System sends notification to Validation Team Lead when extension request is submitted
-6. System tracks extension request status:
-   - Submitted
-   - Under Review
-   - Approved (with new deadline)
-   - Rejected
-7. If extension is approved:
-   - Validation Team Lead sets extension period within maximum allowed period defined in system settings `[SRD Section 6.3.4.4]`
-   - System updates implementation deadline
-   - System notifies commercial establishment of approved extension
-8. If extension is rejected:
-   - Validation Team Lead adds recommendation about granting AEO status `[SRD Section 6.3.4.4]`
-   - Full case is forwarded to AEO Program Manager for final decision
-   - System notifies commercial establishment of rejection
-9. System records all extension requests and decisions in audit trail
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Compliance Improvement Plan extension process
-- **SRD:** Section 6.3.4.4 "Assessment of Compliance Improvement Plan Extension Request", Section 5.9 "Assessment Report Data", Pages 87, 259
-
-**Dependencies:**
-- US-VAL-027, US-VAL-028
-
-**Priority:** Must Have
-
----
-
-### US-VAL-030: Confirm Completion of Compliance Improvement Plan Implementation
-
-**As a** Commercial Establishment Account Manager  
-**I want to** confirm that the Compliance Improvement Plan has been implemented  
-**So that** customs can verify the completion and proceed with final AEO status decision
-
-**Acceptance Criteria:**
-1. If commercial establishment successfully implements Compliance Improvement Plan within deadline, system allows entering completion data `[SRD Section 6.3.4.4.1, 5.9]`
-2. System provides following fields for confirming implementation: `[SRD Section 5.9]`
-   - Detailed Description (text, entering detailed description of actions implemented based on corrective actions stated in assessment report, mandatory)
-   - Supporting Document Name (text, necessary document name that proves implementation of corrective actions, mandatory)
-   - Supporting Document (file upload, attaching necessary documents proving implementation of corrective actions, mandatory)
-3. Supporting documents can be in following formats: `[SRD Section 5.9]`
-   - docx
-   - xlsx
-   - pdf
-   - png / jpeg / jpg
-4. System validates file size and format before accepting upload `[SRD Section 6.3.4.4.1]`
-5. Commercial establishment can provide evidence for each corrective action implemented
-6. System sends notification to Validation Team Lead upon receiving completion confirmation `[SRD Section 6.3.4.4.1]`
-7. Status changes to indicate that implementation is confirmed and awaiting verification
-8. System records completion confirmation in audit trail
-9. Completion data and supporting documents become accessible to Validation Team for verification
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Compliance Improvement Plan completion confirmation
-- **SRD:** Section 6.3.4.4.1 "Confirm the Completion of the Compliance Improvement Plan", Section 5.9 "Assessment Report Data", Pages 87-88, 259-260
-
-**Dependencies:**
-- US-VAL-027, US-VAL-028
-
-**Priority:** Must Have
-
----
-
-<a name="local-customs-final-decision"></a>
-## 8. Local Customs Portal - Final Decision and Control Plan
-
-### Epic: Final AEO Status Decision and Control Plan Development
-Enable the Validation Team Lead and AEO Program Manager to make final decisions on AEO status and develop control plans for approved establishments.
-
----
-
-### US-VAL-031: Review Returned Assessment Report with Comments
-
-**As a** Validation Team Member  
-**I want to** review the assessment report returned by the commercial establishment with comments  
-**So that** feedback can be addressed and the report can be finalized
-
-**Acceptance Criteria:**
-1. When commercial establishment returns draft report with comments, system sends notification to Validation Team `[SRD Section 6.3.4.4.5]`
-2. Notification is sent via email and displayed in Local Customs AEO Management Portal `[SRD Section 6.3.4.4.5]`
-3. Validation Team can view all comments provided by commercial establishment
-4. Comments are displayed alongside the relevant sections/findings they reference
-5. Validation Team can:
-   - Review each comment
-   - Discuss comments internally using internal comment system
-   - Modify findings or recommendations based on valid comments
-   - Reject comments with justification
-   - Request additional clarification from commercial establishment
-6. Validation Team can update draft assessment report based on feedback
-7. After addressing comments, Validation Team can re-share updated draft with commercial establishment
-8. System tracks all iterations of draft assessment report
-9. System records all review activities in audit trail
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Assessment report review and revision
-- **SRD:** Section 6.3.4.3.6 "Approving the Assessment Report", Section 6.3.4.4.5 "Notifications", Pages 258, 268-269
-
-**Dependencies:**
-- US-VAL-026
-
-**Priority:** Must Have
-
----
-
-### US-VAL-032: Review and Evaluate Compliance Improvement Plan
-
-**As a** Validation Team Lead  
-**I want to** review the Compliance Improvement Plan submitted by the commercial establishment  
-**So that** I can determine if the proposed corrective actions are adequate
-
-**Acceptance Criteria:**
-1. When commercial establishment submits Compliance Improvement Plan, system makes it accessible to Validation Team Lead `[SRD Section 6.2.5.2, 6.3.4.4.1]`
-2. Validation Team Lead can review:
-   - Compliance Improvement Plan document
-   - Proposed implementation deadline
-   - Alignment with findings and recommendations in assessment report
-3. Validation Team Lead can evaluate if plan adequately addresses all required corrective actions
-4. Validation Team Lead has following options: `[SRD Section 6.3.4.4.1]`
-   
-   **Option A - Accept Plan:**
-   - Approve Compliance Improvement Plan
-   - Status changes to indicate plan is approved and under execution
-   - System sends notification to commercial establishment `[SRD Section 6.2.5.6]`
-   
-   **Option B - Return Plan:**
-   - Return plan to commercial establishment with comments requesting modifications `[SRD Section 6.3.4.4.1]`
-   - Add multiple comments, for each comment specify:
-     * Section of plan related to comment
-     * Details of comment
-   - Status changes to indicate plan is returned
-   - System sends notification to commercial establishment `[SRD Section 6.2.5.6]`
-5. If plan is returned, commercial establishment can revise and resubmit (can happen recursively multiple times)
-6. System tracks all versions of Compliance Improvement Plan submitted
-7. System records all review decisions in audit trail
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Compliance Improvement Plan review
-- **SRD:** Section 6.3.4.4.1 "Confirm the Completion of the Compliance Improvement Plan", Section 6.2.5.2 "Reviewing of Draft Assessment Report", Section 6.2.5.6 "Notifications", Pages 193-194, 201-202, 259-260
-
-**Dependencies:**
-- US-VAL-027
-
-**Priority:** Must Have
-
----
-
-### US-VAL-033: Verify Compliance Improvement Plan Implementation
-
-**As a** Validation Team Lead  
-**I want to** verify that the Compliance Improvement Plan has been properly implemented  
-**So that** I can confirm corrective actions before making final recommendation
-
-**Acceptance Criteria:**
-1. Upon receiving notification of Compliance Improvement Plan completion from commercial establishment, Validation Team Lead reviews implementation `[SRD Section 6.3.4.4.1]`
-2. Validation Team Lead can access:
-   - Original Compliance Improvement Plan
-   - Detailed description of actions implemented
-   - Supporting documents proving implementation
-3. Validation Team Lead can conduct verification activities:
-   - Review submitted evidence
-   - Schedule follow-up meetings if needed
-   - Conduct site visits to verify implementation (optional)
-4. Validation Team Lead has following options: `[SRD Section 6.3.4.4.1]`
-   
-   **Option A - Confirm Implementation:**
-   - Confirms successful completion of Compliance Improvement Plan for specific trade license
-   - If assessment report includes multiple trade licenses, system prompts for recommendation on whether to grant AEO status for that license
-   - Status changes to indicate implementation is confirmed
-   - Process proceeds to final recommendation
-   
-   **Option B - Return for Further Action:**
-   - Returns report to commercial establishment requesting further clarification or additional information `[SRD Section 6.3.4.4.1]`
-   - Can add multiple comments specifying required actions
-   - Status changes to indicate further implementation required
-   
-   **Option C - Reject Implementation:**
-   - Rejects completion of Compliance Improvement Plan `[SRD Section 6.3.4.4.1]`
-   - Indicates recommendation NOT to grant AEO status for specific trade license
-   - Decision applies to concerned license and does not affect other trade licenses in same assessment report
-   - Final decision will be made by AEO Program Manager
-5. System records verification decision in audit trail
-6. System sends notifications to relevant parties based on decision
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Compliance Improvement Plan verification
-- **SRD:** Section 6.3.4.4.1 "Confirm the Completion of the Compliance Improvement Plan", Pages 259-260
-
-**Dependencies:**
-- US-VAL-030, US-VAL-032
-
-**Priority:** Must Have
-
----
-
-### US-VAL-034: Submit Final Recommendation on AEO Status
-
-**As a** Validation Team Lead  
-**I want to** submit my final recommendation on granting AEO status  
-**So that** the AEO Program Manager can make the final decision
-
-**Acceptance Criteria:**
-1. Once assessment report is approved by commercial establishment (with or without Compliance Improvement Plan implementation confirmed), Validation Team Lead can submit recommendation `[SRD Section 6.3.4.4.1, 6.3.4.4.2]`
-2. For each trade license in assessment report, Validation Team Lead provides recommendation:
-   - Grant AEO status
-   - Do not grant AEO status (with justification)
-3. System compiles assessment file for forwarding to AEO Program Manager with following information: `[SRD Section 6.3.4.4.2]`
-   - Assessment File (complete with all findings, recommendations, remaining risks)
-   - Assessment Report (complete internal version)
-   - Compliance Improvement Plan (if applicable)
-   - Validation Team Lead's recommendation for each trade license
-4. System changes status to indicate recommendation is submitted and awaiting final decision
-5. System sends notification to AEO Program Manager that assessment file is ready for final decision `[SRD Section 6.3.4.4.5]`
-6. Notification includes summary of validation findings and recommendations
-7. System records recommendation submission in audit trail
-8. Assessment file becomes accessible to AEO Program Manager for review
-
-**Business Rules:**
-- None specified for this story
-
-**Traceability:**
-- **BRD:** Final recommendation submission
-- **SRD:** Section 6.3.4.4.1 "Confirm the Completion of the Compliance Improvement Plan", Section 6.3.4.4.2 "AEO Decision", Section 6.3.4.4.5 "Notifications", Pages 259-261, 268-269
-
-**Dependencies:**
-- US-VAL-028, US-VAL-033 (if Compliance Improvement Plan was required)
-
-**Priority:** Must Have
-
----
-
-### US-VAL-035: Make Final Decision on AEO Status
+### US-CERT-001: Assign Key Account Managers Team
 
 **As an** AEO Program Manager  
-**I want to** review the complete assessment file and make final decision on granting AEO status  
-**So that** the commercial establishment can receive final determination
+**I want to** assign the Key Account Managers Team to certified commercial establishments  
+**So that** ongoing monitoring and support can be provided to AEOs
 
 **Acceptance Criteria:**
-1. Once Validation Team Lead submits recommendation, AEO Program Manager receives assessment file with: `[SRD Section 6.3.4.4.2]`
-   - Assessment File
-   - Assessment Report
-   - Compliance Improvement Plan (if applicable)
-   - Validation Team Lead's recommendation for each trade license
-2. AEO Program Manager reviews complete assessment documentation
-3. AEO Program Manager has following decision options: `[SRD Section 6.3.4.4.2]`
-   
-   **Option A - Request Further Clarifications:**
-   - Returns file to Validation Team for additional information
-   - Specifies what clarifications are needed
-   - System sends notification to Validation Team
-   
-   **Option B - Reject Granting AEO Status:**
-   - Rejects granting AEO status with justification
-   - System changes status to "AEO Status Rejected"
-   - Commercial establishment and Validation Team are notified `[SRD Section 6.3.4.4.2]`
-   - Status becomes final
-   
-   **Option C - Approve Granting AEO Status:**
-   - Approves granting AEO status to commercial establishment
-   - System changes status to "AEO Status Granted"
-   - Following occurs simultaneously: `[SRD Section 6.3.4.4.2]`
-     * Commercial establishment is notified of approval
-     * Validation Team is notified to start preparing Control Plan
-     * AEO Program Manager must assign Key Account Managers Team
-4. If status is approved, system provides interface for AEO Program Manager to assign Key Account Managers Team
-5. Key Account Managers Team becomes responsible for:
-   - Serving as only contact point with commercial establishment after granting AEO status `[SRD Section 6.3.4.4.2]`
-   - Confirming branches for which certificate will be issued
-   - Specifying benefits group
-   - Identifying authorized contact person to communicate on behalf of commercial establishment
-6. System records decision in audit trail `[SRD Section 6.3.4.4.4]`
-7. System sends notifications to all relevant parties `[SRD Section 6.3.4.4.5]`
+1. After AEO Program Manager approves granting AEO status to commercial establishment, system allows assignment of Key Account Managers Team `[SRD Section 6.3.5]`
+2. System provides interface to select and assign one or more Key Account Managers to the commercial establishment `[SRD Section 6.3.5]`
+3. When Key Account Managers Team is assigned, system automatically triggers following actions: `[SRD Section 6.3.5]`
+   - System automatically assigns default benefits group to commercial establishment(s)
+   - Request to issue certificate(s) is sent to general department of customs at federal authority
+4. System allows viewing list of available Key Account Managers with their current workload
+5. System allows assigning multiple Key Account Managers to same commercial establishment
+6. If more than one Key Account Manager is assigned to commercial establishment, all have same privileges on this establishment `[SRD Section 6.3.6.1]`
+7. If "AEO Authorization Request" contains headquarter and other branches, system allows assigning different Key Account Managers to different trade licenses
+8. System records Key Account Managers Team assignment in audit trail
+9. System sends notification to assigned Key Account Managers about their new assignment
+10. System changes status to "Certificate Under Issuance" after Key Account Managers Team assignment
 
 **Business Rules:**
 - None specified for this story
 
 **Traceability:**
-- **BRD:** Final AEO status decision
-- **SRD:** Section 6.3.4.4.2 "AEO Decision", Section 6.3.4.4.4 "Statuses of Validation Process", Section 6.3.4.4.5 "Notifications", Pages 260-261, 263-268, 268-269
+- **BRD:** Key Account Manager assignment process
+- **SRD:** Section 6.3.5 "AEO Certification Process", Section 6.3.6.1 "Key Account Management", Pages 269-272
 
 **Dependencies:**
-- US-VAL-034
+- US-VAL-035 (Final AEO status decision)
 
 **Priority:** Must Have
 
 ---
 
-### US-VAL-036: Develop Control Plan for Approved AEO
+### US-CERT-002: Manage Benefits Assignment
+
+**As a** Key Account Manager  
+**I want to** manage benefits packages assigned to certified AEOs  
+**So that** appropriate benefits are granted based on commercial establishment's profile
+
+**Acceptance Criteria:**
+1. When Key Account Managers Team is assigned, system automatically assigns default benefits group to commercial establishment(s) `[SRD Section 6.3.5]`
+2. Key Account Manager can view currently assigned benefits package for commercial establishment
+3. Key Account Manager can change benefits package that will be assigned to commercial establishment(s) `[SRD Section 6.3.5]`
+4. If "AEO Authorization Request" contains headquarter and other branches, system allows assigning different groups of benefits to approved trade licenses `[SRD Section 6.3.5]`
+5. System provides list of available benefits groups to select from
+6. Key Account Manager can view details of each benefits group before assignment
+7. System validates that selected benefits group is appropriate for commercial establishment's type
+8. System allows Key Account Manager to modify benefits assignment before certificate issuance
+9. System records all benefits assignment changes in audit trail
+10. Benefits become active once certificate is issued
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Benefits management
+- **SRD:** Section 6.3.5 "AEO Certification Process", Pages 269-270
+
+**Dependencies:**
+- US-CERT-001
+
+**Priority:** Must Have
+
+---
+
+<a name="federal-customs-certificate-issuance"></a>
+## 2. Federal Customs Portal - Certificate Issuance
+
+### Epic: Certificate Issuance
+**Goal:** Enable Federal Administrator to issue AEO certificates to approved commercial establishments
+
+---
+
+### US-CERT-003: Process Certificate Issuance Request
+
+**As a** Senior Federal Administrator  
+**I want to** process certificate issuance requests  
+**So that** AEO certificates can be officially issued to approved commercial establishments
+
+**Acceptance Criteria:**
+1. After Key Account Managers Team is assigned, request to issue certificate(s) is sent to general department of customs at federal authority `[SRD Section 6.3.5]`
+2. Senior Federal Administrator receives notification about certificate issuance request
+3. System displays list of pending certificate issuance requests in Federal Customs Portal
+4. Senior Federal Administrator can view complete details of each request including:
+   - Commercial establishment information
+   - Approved trade licenses
+   - AEO authorization request details
+   - Assessment report summary
+   - Assigned benefits package
+5. If "AEO Authorization Request" includes multiple branches, system allows issuing AEO certificate for each approved branch separately `[SRD Section 6.2.6.1]`
+6. System allows issuing AEO certificate for each approved trade license separately `[SRD Section 6.2.6.1]`
+7. For each certificate to be issued, Senior Federal Administrator can:
+   - Review all required information
+   - Verify accuracy of data
+   - Generate certificate document
+8. System provides certificate template with all required fields automatically populated
+9. Senior Federal Administrator can preview certificate before final issuance
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Certificate issuance process
+- **SRD:** Section 6.3.5 "AEO Certification Process", Section 6.2.6.1 "Issuance of Certificate(s)", Pages 203, 269-270
+
+**Dependencies:**
+- US-CERT-001
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-004: Issue AEO Certificate
+
+**As a** Senior Federal Administrator  
+**I want to** officially issue AEO certificates  
+**So that** commercial establishments receive their certification
+
+**Acceptance Criteria:**
+1. Senior Federal Administrator can issue certificate(s) for approved commercial establishment `[SRD Section 6.3.5]`
+2. When certificate is issued, system changes status from "Certificate Under Issuance" to "AEO Certified" `[SRD Section 6.2.6.2, 6.3.5.1]`
+3. System generates unique certificate number for each certificate
+4. Certificate includes following information:
+   - Commercial establishment name
+   - Trade license number
+   - Certificate number
+   - Issuance date
+   - Expiration date (calculated as two years from issuance date) `[BR.17]`
+   - Assigned benefits
+   - Federal authority seal and signature
+5. If multiple trade licenses are approved, system issues separate certificate for each trade license
+6. System stores issued certificate(s) in secure document repository
+7. System sends notification to following parties when certificate is issued: `[SRD Section 6.2.6.3, 6.3.5.2]`
+   - Commercial establishment account manager (via email and AEO Portal)
+   - Key Account Managers Team (via email and Local Customs AEO management portal)
+   - Local customs departments (via email and Local customs AEO management portal)
+8. System records certificate issuance in audit trail `[SRD Section 6.2.6.2, 6.3.5.1]`
+9. Certificate becomes available for viewing and download in AEO Portal `[SRD Section 6.2.6.1]`
+10. System updates commercial establishment status to "AEO Certified"
+
+**Business Rules:**
+- BR.17: The license expiration date is calculated automatically as two years from the issuance date, with the ability to modify the expiration date through the system
+
+**Traceability:**
+- **BRD:** Certificate issuance
+- **SRD:** Section 6.3.5 "AEO Certification Process", Section 6.2.6.1 "Issuance of Certificate(s)", Section 6.2.6.2 "Statuses of AEO Certificate", Section 6.2.6.3 "Notifications", Section 6.3.5.1 "Statuses of AEO", Section 6.3.5.2 "Notifications", Pages 203-205, 270-271
+
+**Dependencies:**
+- US-CERT-003
+
+**Priority:** Must Have
+
+---
+
+<a name="aeo-portal-certificate-viewing"></a>
+## 3. AEO Portal - Certificate Viewing and Management
+
+### Epic: Certificate Management
+**Goal:** Enable commercial establishments to view and manage their AEO certificates
+
+---
+
+### US-CERT-005: View Certificate Status
+
+**As a** Commercial Establishment Account Manager  
+**I want to** view the status of my AEO certificate  
+**So that** I can track the issuance process and know when certificate is ready
+
+**Acceptance Criteria:**
+1. Commercial establishment can view certificate status in AEO Portal
+2. System displays following statuses as applicable: `[SRD Section 6.2.6.2]`
+   - **AEO Certificate Under Issuance:** When senior federal administrator receives AEO request to issue certificate but certificate is not issued yet
+   - **AEO Certified:** When certificate has been issued
+   - **AEO Status Suspended:** When AEO certificate has been suspended temporarily
+   - **AEO Status Revoked:** When AEO certificate has been revoked permanently
+   - **AEO Status Cancelled:** When commercial establishment cancels the certificate
+3. Commercial establishment receives notification when status changes:
+   - Certificate Under Issuance: When senior federal administrator receives AEO request `[SRD Section 6.2.6.3]`
+   - AEO Certified: When certificate is issued `[SRD Section 6.2.6.3]`
+   - AEO Status Suspended: When AEO status is suspended `[SRD Section 6.2.6.3]`
+   - AEO Status Revoked: When AEO status is revoked `[SRD Section 6.2.6.3]`
+   - AEO Status Under Review: When AEO program manager starts reviewing AEO status `[SRD Section 6.2.5.6]`
+4. Notifications are sent via email and AEO Portal `[SRD Section 6.2.6.3]`
+5. System displays status history showing all status changes with timestamps
+6. Commercial establishment account manager receives all notifications
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Certificate status tracking
+- **SRD:** Section 6.2.6.2 "Statuses of AEO Certificate", Section 6.2.6.3 "Notifications", Pages 203-205
+
+**Dependencies:**
+- US-CERT-004
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-006: View and Download AEO Certificate
+
+**As a** Commercial Establishment Account Manager  
+**I want to** view and download my AEO certificate  
+**So that** I can use it for business purposes and keep records
+
+**Acceptance Criteria:**
+1. After commercial establishment is approved for granting AEO status and certificate is issued, commercial establishment is notified that certificate is available `[SRD Section 6.2.6.1]`
+2. Certificate(s) become available for viewing and download through AEO Portal once issued `[SRD Section 6.2.6.1]`
+3. Commercial establishment can view list of all issued certificates (if multiple trade licenses)
+4. For each certificate, system displays:
+   - Certificate number
+   - Trade license number
+   - Issuance date
+   - Expiration date
+   - Current status (Active, Suspended, Revoked, Cancelled)
+5. Commercial establishment can view full certificate in PDF format
+6. System provides "Download" button to download certificate(s)
+7. Downloaded certificate is in official PDF format with all security features
+8. System maintains access log of certificate views and downloads
+9. If multiple certificates were issued (for different trade licenses), each certificate is available separately
+10. System allows printing of certificate directly from portal
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Certificate access and download
+- **SRD:** Section 6.2.6.1 "Issuance of Certificate(s)", Page 203
+
+**Dependencies:**
+- US-CERT-004
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-007: Request Certificate Cancellation
+
+**As a** Commercial Establishment Account Manager  
+**I want to** request cancellation of my AEO certificate  
+**So that** I can voluntarily withdraw from the AEO program if needed
+
+**Acceptance Criteria:**
+1. Commercial establishment can submit request to cancel AEO certificate through AEO Portal
+2. System provides cancellation request form with following fields:
+   - Trade license(s) for which cancellation is requested
+   - Reason for cancellation
+   - Supporting documents (optional)
+   - Effective date requested
+3. System validates that certificate is in "AEO Certified" or "AEO Status Suspended" status before allowing cancellation request
+4. Commercial establishment must confirm cancellation request before submission
+5. Once submitted, system sends notification to Key Account Manager and AEO Program Manager
+6. System changes status to "Cancellation Requested" pending approval
+7. After approval by AEO Program Manager, system changes status to "AEO Status Cancelled" `[SRD Section 6.2.6.2]`
+8. Status "AEO Status Cancelled" is final status `[SRD Section 6.2.6.2]`
+9. System sends notification to commercial establishment when cancellation is processed
+10. System records cancellation request and approval in audit trail
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Certificate cancellation
+- **SRD:** Section 6.2.6.2 "Statuses of AEO Certificate", Pages 203-205
+
+**Dependencies:**
+- US-CERT-006
+
+**Priority:** Must Have
+
+---
+
+<a name="local-customs-key-account-management"></a>
+## 4. Local Customs Portal - Key Account Management
+
+### Epic: Key Account Management
+**Goal:** Enable Key Account Managers to monitor and manage certified AEOs
+
+---
+
+### US-CERT-008: View AEO Summary and Dashboard
+
+**As a** Key Account Manager  
+**I want to** view summary dashboard of AEOs assigned to me  
+**So that** I can effectively monitor their performance and compliance
+
+**Acceptance Criteria:**
+1. Key Account Manager can access dashboard showing all AEOs assigned to them `[SRD Section 6.3.6.1]`
+2. For each AEO, system displays summary information including: `[SRD Section 6.3.6.1]`
+   - Last monitoring actions that were conducted
+   - Upcoming monitoring actions, including responsible team member assigned to each action
+   - Date of last validation/revalidation conducted for the AEO
+   - Date of upcoming revalidation that will be conducted by Validation Team
+3. Dashboard provides at-a-glance view of:
+   - Total number of AEOs assigned
+   - AEOs with overdue monitoring actions
+   - AEOs with upcoming monitoring actions in next 30 days
+   - AEOs requiring revalidation
+   - AEOs with logged violations
+4. System provides filtering and sorting options for AEO list:
+   - By AEO status
+   - By last monitoring date
+   - By upcoming actions
+   - By trade license type
+5. Key Account Manager can click on any AEO to view detailed profile
+6. System sends reminders to Key Account Manager when date of monitoring action is approaching `[SRD Section 6.3.6.1]`
+7. Reminder timing is configured through system settings `[SRD Section 6.3.6.1]`
+8. Dashboard updates in real-time as actions are completed
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Key Account Manager dashboard
+- **SRD:** Section 6.3.6.1 "Key Account Management", Pages 271-272
+
+**Dependencies:**
+- US-CERT-001
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-009: View Commercial Establishment Profile
+
+**As a** Key Account Manager  
+**I want to** view complete profile of commercial establishment  
+**So that** I have all necessary information to perform my monitoring duties
+
+**Acceptance Criteria:**
+1. Key Account Manager can view complete commercial establishment profile and all related information `[SRD Section 6.3.6.1]`
+2. Profile includes following information: `[SRD Section 6.3.6.1]`
+   - AEO Authorization Request details
+   - Self-Assessment Questionnaire (SAQ)
+   - Assessment file
+   - Assessment report
+   - AEO certificate(s)
+   - Assigned benefits
+   - Control plan
+   - Monitoring history
+   - Violation history
+   - Communication history
+3. Key Account Manager can access and download all documents associated with commercial establishment
+4. System provides tabbed interface or sections to organize information logically
+5. Profile shows current AEO status and status history
+6. Key Account Manager can view authorized contact persons information
+7. System displays trade license details including:
+   - Trade license number
+   - Expiration date
+   - Activities covered
+   - Branch information (if applicable)
+8. Profile includes timeline view showing key events in AEO lifecycle
+9. Key Account Manager can add internal notes to profile (visible only to customs)
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Commercial establishment profile access
+- **SRD:** Section 6.3.6.1 "Key Account Management", Pages 271-272
+
+**Dependencies:**
+- US-CERT-008
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-010: Manage Authorized Contact Persons
+
+**As a** Key Account Manager  
+**I want to** manage authorized contact persons information for AEO  
+**So that** contact information remains current for effective communication
+
+**Acceptance Criteria:**
+1. Key Account Manager can view list of authorized contact persons for commercial establishment `[SRD Section 6.3.6.1]`
+2. For each contact person, system displays: `[SRD Section 5.11]`
+   - Name (Arabic and English)
+   - Email
+   - Phone number
+   - Alternative mobile number (if provided)
+   - Fixed landline number (if provided)
+   - Job title
+3. Key Account Manager can update contact person information to keep data current `[SRD Section 6.3.6.1]`
+4. System validates email format and phone number format
+5. System requires mandatory fields to be completed:
+   - Name (Arabic) - Arabic letters only
+   - Name (English) - English letters only
+   - Email
+   - Phone number
+   - Job title
+6. Key Account Manager can add new authorized contact persons
+7. Key Account Manager can deactivate contact persons who are no longer authorized
+8. System maintains history of all changes to contact persons
+9. Changes to contact persons are recorded in audit trail
+10. System validates that at least one active authorized contact person exists at all times
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Contact person management
+- **SRD:** Section 6.3.6.1 "Key Account Management", Section 5.11 "Designated Contact Person Representing the Commercial Establishment Data", Pages 78-79, 271-273
+
+**Dependencies:**
+- US-CERT-009
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-011: Communicate with Commercial Establishment
+
+**As a** Key Account Manager  
+**I want to** communicate with commercial establishment through the system  
+**So that** all communications are documented and accessible
+
+**Acceptance Criteria:**
+1. Key Account Manager can initiate conversations with commercial establishment through system `[SRD Section 6.3.6.1, 6.3.8]`
+2. During certificate issuance phase and after, messages from commercial establishment are directed to Key Account Manager `[SRD Section 6.3.8]`
+3. After certificate issuance phase, communication is limited to Key Account Manager only `[SRD Section 6.3.8]`
+4. System provides messaging interface within commercial establishment profile
+5. Key Account Manager can: `[SRD Section 6.3.8]`
+   - View all conversations with commercial establishment
+   - Open existing conversation
+   - Write reply
+   - Attach documents to messages (if necessary)
+6. Each conversation is assigned status indicating which party is expected to take next action: `[SRD Section 6.3.8]`
+   - "Waiting for Customs Response" - when commercial establishment sends message
+   - "Establishment Action Required" - when customs sends message
+7. Key Account Manager manages conversation status and can close conversation once matter is resolved `[SRD Section 6.3.8]`
+8. All correspondence between commercial establishment and customs is saved in system `[SRD Section 6.3.8]`
+9. Key Account Manager can view messages that were previously exchanged during earlier phases (e.g., with administrator or validation team) `[SRD Section 6.3.8]`
+10. Upon entering "Conversations" section, all conversations appear with most recent messages displayed at top `[SRD Section 6.3.8]`
+11. Key Account Manager receives notification via email and Local Customs AEO management portal when receiving new reply from commercial establishment `[SRD Section 6.3.8, 6.3.8.1]`
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Communication management
+- **SRD:** Section 6.3.6.1 "Key Account Management", Section 6.3.8 "Communication with the Commercial Establishment", Section 6.3.8.1 "Notifications", Pages 271-273, 292-294
+
+**Dependencies:**
+- US-CERT-009
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-012: Log Violations
+
+**As a** Key Account Manager  
+**I want to** log violations against commercial establishment  
+**So that** compliance issues are documented and can be addressed
+
+**Acceptance Criteria:**
+1. Key Account Manager can log reported violation against commercial establishment `[SRD Section 6.3.6.1]`
+2. System provides violation logging form with following fields:
+   - Violation type (from system lookup)
+   - Violation date
+   - Detailed description
+   - Severity level
+   - Source of violation report (monitoring action, complaint, customs operation, etc.)
+   - Supporting documents (optional)
+   - Recommended action
+3. System allows selecting violation type from predefined violations lookup managed by Federal Administrator
+4. Key Account Manager can attach evidence documents to violation record
+5. System automatically links violation to relevant monitoring action if violation was discovered during monitoring
+6. Once violation is logged, system sends notification to:
+   - AEO Program Manager
+   - Other Key Account Managers assigned to same AEO
+   - Commercial establishment (if required based on violation severity)
+7. Logged violations appear in commercial establishment profile
+8. System maintains violation history showing all logged violations with current status
+9. Key Account Manager can update violation status:
+   - Open
+   - Under Review
+   - Resolved
+   - Escalated
+10. System records all violation logging and updates in audit trail
+11. Violations are considered in revalidation decisions
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Violation logging
+- **SRD:** Section 6.3.6.1 "Key Account Management", Pages 271-273
+
+**Dependencies:**
+- US-CERT-009
+
+**Priority:** Must Have
+
+---
+
+<a name="local-customs-control-plan-monitoring"></a>
+## 5. Local Customs Portal - Control Plan Monitoring
+
+### Epic: Control Plan Execution and Monitoring
+**Goal:** Enable Key Account Managers to execute and manage control plans for certified AEOs
+
+---
+
+### US-CERT-013: View and Manage Control Plan
+
+**As a** Key Account Manager  
+**I want to** view and manage control plan for AEO  
+**So that** monitoring activities are properly planned and executed
+
+**Acceptance Criteria:**
+1. Following issuance of certificate, responsibility for ongoing monitoring of AEO's performance is transferred to Key Account Manager `[US-VAL-037, SRD Section 6.3.4.4.3]`
+2. Key Account Manager can access control plan for assigned AEO
+3. Control plan displays all monitoring actions organized by SAQ sections/leaf sections
+4. For each monitoring action, system displays: `[SRD Section 5.10]`
+   - Action description
+   - Monitoring method (document review, on-site inspection, remote meeting, etc.)
+   - Frequency (daily, weekly, monthly, quarterly, annually, etc.)
+   - Responsible Key Account Manager
+   - Last execution date
+   - Next scheduled date
+   - Status (Pending, Completed, Overdue)
+5. During monitoring phase (post-certification), control plan remains editable by Key Account Manager `[US-VAL-037, SRD Section 6.3.4.4.3]`
+6. Key Account Manager can modify control plan once needed: `[SRD Section 6.3.6.1]`
+   - Add new control actions
+   - Edit existing control actions
+   - Remove control actions
+   - Re-assign control action to different Key Account Manager (along with justification)
+7. System validates that control plan covers all critical areas from assessment
+8. All modifications to control plan are recorded in audit trail with justification
+9. System sends notification to affected Key Account Manager when actions are re-assigned
+10. Validation Team retains read-only access to control plan for supervision purposes `[US-VAL-037, SRD Section 6.3.4.4.3]`
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Control plan management
+- **SRD:** Section 6.3.4.4.3 "Control Plan Development, Approval and Modification", Section 6.3.6.1 "Key Account Management", Section 5.10 "Control Plan Data", Pages 88-91, 261-263, 271-273
+
+**Dependencies:**
+- US-VAL-037 (Control plan approval)
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-014: Execute Monitoring Actions
+
+**As a** Key Account Manager  
+**I want to** execute monitoring actions from control plan  
+**So that** AEO compliance is continuously verified
+
+**Acceptance Criteria:**
+1. Key Account Manager can view list of monitoring actions assigned to them
+2. System displays upcoming monitoring actions with due dates
+3. System sends reminders when date of monitoring action is approaching `[SRD Section 6.3.6.1]`
+4. Reminder timing is configured through system settings
+5. For each monitoring action, Key Account Manager can:
+   - View action details
+   - Access relevant documents and history
+   - Conduct monitoring activity (document review, schedule meeting, etc.)
+   - Record findings and observations
+   - Upload evidence/documents
+6. After conducting monitoring action, Key Account Manager confirms completion and adds remarks `[SRD Section 6.3.6.1]`
+7. System requires following information upon completion:
+   - Completion date
+   - Findings/observations
+   - Compliance status (Compliant, Minor issue, Major issue, Non-compliant)
+   - Remarks
+   - Supporting documents (if applicable)
+8. System automatically calculates next scheduled date based on action frequency
+9. If issues are identified during monitoring, Key Account Manager can:
+   - Log violation (if severe)
+   - Request corrective action from AEO
+   - Escalate to AEO Program Manager
+   - Initiate revalidation (if necessary)
+10. System records all monitoring action executions in audit trail
+11. Completed monitoring actions appear in AEO's monitoring history
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Monitoring action execution
+- **SRD:** Section 6.3.6.1 "Key Account Management", Pages 271-273
+
+**Dependencies:**
+- US-CERT-013
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-015: Schedule Monitoring Meetings
+
+**As a** Key Account Manager  
+**I want to** schedule meetings to perform monitoring actions  
+**So that** on-site or remote monitoring can be conducted effectively
+
+**Acceptance Criteria:**
+1. Key Account Manager can schedule meetings to perform monitoring actions `[SRD Section 6.3.6.1]`
+2. Monitoring meetings follow same process as validation meetings `[SRD Section 6.3.6.1]`
+3. System provides meeting scheduling interface with following fields:
+   - Meeting title
+   - Purpose of meeting
+   - Meeting type (on-site, remote, hybrid)
+   - Date and time
+   - Duration
+   - Location (if on-site)
+   - Meeting link (if remote)
+   - Attendees from Key Account Manager side
+   - Required attendees from commercial establishment
+4. System validates that meeting is scheduled with adequate advance notice as defined in system settings `[BR.26]`
+5. System will not allow scheduling any meeting with date earlier than defined notification period `[BR.26]`
+6. Once meeting is scheduled, system sends invitation to:
+   - Commercial establishment authorized contact persons (via email and AEO Portal)
+   - Key Account Managers team members involved
+7. Commercial establishment must confirm or request rescheduling of meeting
+8. Once commercial establishment confirms meeting date, it is reflected in calendar of Key Account Managers Team `[SRD Section 6.3.6.1]`
+9. System sends reminders before meeting based on configured schedule
+10. Key Account Manager can add agenda and attach documents to meeting invitation
+11. After meeting, Key Account Manager can record meeting minutes and outcomes
+12. Meeting scheduling and attendance are recorded in audit trail
+
+**Business Rules:**
+- BR.26: When scheduling meetings whether field visits, remote meetings, or a hearing session for an appeal request, the commercial establishment shall be notified of a specific period in advance, as defined in the system settings. The system will not allow scheduling any meeting with a date earlier than the defined notification period.
+
+**Traceability:**
+- **BRD:** Monitoring meeting scheduling
+- **SRD:** Section 6.3.6.1 "Key Account Management", Pages 271-273
+
+**Dependencies:**
+- US-CERT-013
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-016: Amend Commercial Establishment Profile
+
+**As a** Key Account Manager  
+**I want to** amend commercial establishment profile to reflect critical events  
+**So that** profile information remains accurate and current
+
+**Acceptance Criteria:**
+1. Key Account Manager can amend commercial establishment profile to reflect critical events `[SRD Section 6.3.6.1]`
+2. Critical events that can be recorded include:
+   - Trade license renewal
+   - Trade license cancellation
+   - Trade license suspension
+   - Changes in activities in supply chain
+   - Changes in business operations
+   - Changes in ownership/management
+   - Mergers or acquisitions
+3. System provides interface to record each type of critical event
+4. For trade license changes, Key Account Manager can:
+   - Update license status
+   - Update expiration date
+   - Add new licenses
+   - Mark licenses as inactive
+5. For supply chain activity changes, Key Account Manager can:
+   - Add new activities
+   - Remove discontinued activities
+   - Modify scope of existing activities
+6. System validates that all changes are properly documented
+7. Key Account Manager must provide justification for significant changes
+8. System sends notification to AEO Program Manager when critical changes are recorded
+9. Critical changes may trigger need for revalidation
+10. All profile amendments are recorded in audit trail with timestamp and justification
+11. Commercial establishment is notified when profile changes affect their AEO status or benefits
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Profile amendment
+- **SRD:** Section 6.3.6.1 "Key Account Management", Pages 271-273
+
+**Dependencies:**
+- US-CERT-009
+
+**Priority:** Must Have
+
+---
+
+<a name="local-customs-revalidation"></a>
+## 6. Local Customs Portal - Re-validation Process
+
+### Epic: Re-validation Process
+**Goal:** Enable periodic re-validation of AEOs to ensure continued compliance
+
+---
+
+### US-CERT-017: Raise Revalidation Request
+
+**As a** Key Account Manager  
+**I want to** raise revalidation request to AEO Program Manager  
+**So that** AEO's continued compliance can be verified
+
+**Acceptance Criteria:**
+1. Key Account Manager can raise revalidation request to AEO Program Manager along with justification `[SRD Section 6.3.6.1, 6.3.6.2]`
+2. Revalidation process begins for one of following reasons: `[SRD Section 6.3.6.2]`
+   - Key Account Manager submits request to AEO program manager for revalidation of commercial establishment, including reasons for request
+   - Periodic revalidation is triggered based on system settings calculated from date of last validation process
+3. Periodic revalidation must be conducted within maximum of five (5) years from last validation `[BR.23]`
+4. When periodic revalidation is due, system notifies Key Account Manager to initiate revalidation `[SRD Section 6.3.6.2]`
+5. System provides revalidation request form with following fields:
+   - Reason for revalidation (from dropdown)
+   - Detailed justification
+   - Scope of revalidation (full or partial)
+   - Areas of concern (if partial revalidation)
+   - Priority level
+   - Supporting documents
+6. Common reasons for revalidation include:
+   - Periodic review (5-year cycle)
+   - Significant violations logged
+   - Major changes in business operations
+   - Changes in supply chain activities
+   - Complaints received
+   - Risk indicators identified
+7. Once request is submitted, system sends notification to AEO Program Manager
+8. System changes status to "Revalidation Request Submitted" pending approval
+9. Request includes link to commercial establishment profile and monitoring history
+10. System records revalidation request in audit trail
+
+**Business Rules:**
+- BR.23: The periodic revalidation process must be conducted within a maximum of five (5) years from the last validation to ensure the commercial establishment continues to meet the AEO program standards.
+
+**Traceability:**
+- **BRD:** Revalidation request
+- **SRD:** Section 6.3.6.1 "Key Account Management", Section 6.3.6.2 "The Re-Validation Process", Pages 271-274
+
+**Dependencies:**
+- US-CERT-008
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-018: Review and Approve Revalidation Request
+
+**As an** AEO Program Manager  
+**I want to** review and approve revalidation requests  
+**So that** appropriate revalidation activities are initiated
+
+**Acceptance Criteria:**
+1. AEO Program Manager receives notification when revalidation request is submitted
+2. AEO Program Manager can view revalidation request with all details including:
+   - Commercial establishment information
+   - Reason for revalidation
+   - Detailed justification
+   - Current AEO status
+   - Monitoring history
+   - Violation history
+   - Last validation/revalidation date
+3. Upon receiving request from Key Account Manager, AEO Program Manager can take one of following actions: `[SRD Section 6.3.6.2]`
+   - **Approve:** Assigns re-validation team to commercial establishment
+   - **Return:** Returns request for further clarifications (with remarks)
+   - **Reject:** Rejects request along with justification
+4. If approved, AEO Program Manager selects validation team members to form revalidation team
+5. System validates that selected team members are available
+6. Revalidation team must consist of at least two members: team lead and team member `[BR.25]`
+7. Once revalidation team is assigned, system sends notification to:
+   - Assigned validation team members
+   - Key Account Manager who raised request
+   - Commercial establishment (if necessary)
+8. System changes status to "Revalidation Team Assigned"
+9. If returned or rejected, system sends notification to Key Account Manager with remarks
+10. System records all actions and decisions in audit trail
+
+**Business Rules:**
+- BR.25: The validation team consists of at least two members: a team lead and a team member.
+
+**Traceability:**
+- **BRD:** Revalidation approval
+- **SRD:** Section 6.3.6.2 "The Re-Validation Process", Pages 273-274
+
+**Dependencies:**
+- US-CERT-017
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-019: Prepare Re-assessment Plan
 
 **As a** Validation Team Member  
-**I want to** develop a control plan for the approved AEO  
-**So that** ongoing monitoring of the establishment's performance can be managed
+**I want to** prepare re-assessment plan for revalidation  
+**So that** revalidation activities are properly planned and structured
 
 **Acceptance Criteria:**
-1. Validation Team begins preparing Control Plan once AEO Program Manager approves granting AEO status `[SRD Section 6.3.4.4.3]`
-2. System sends notification to Validation Team to start preparing Control Plan `[SRD Section 6.3.4.4.2]`
-3. Validation Team Member/Lead enters plan data in accordance with data dictionary "Control Plan Data" `[SRD Section 6.3.4.4.3, 5.10]`
-4. System enables user to either: `[SRD Section 6.3.4.4.3]`
-   - Create single control plan that covers all approved trade licenses under same AEO Authorization Request, OR
-   - Develop individual control plans for each trade license separately
-5. System does not allow single branch to be associated with multiple Control Plans `[SRD Section 6.3.4.4.3]`
-6. If branch exists in a plan, it cannot be selected for new plan `[SRD Section 6.3.4.4.3]`
-7. Control plan has same structure as SAQ so that Validation Team adds monitoring actions and all related details for each action under every leaf section of SAQ `[SRD Section 6.3.4.4.3]`
-8. For each control action (assigned to leaf section in SAQ), system provides following fields: `[SRD Section 5.10]`
-   - AEO Certificate No (multiple choice list, one at least mandatory) - identifier of AEO(s) related to this control plan
-   - Action (multiple choices list, description of control action, mandatory)
-   - The Address Related to the Action (single choice list from commercial establishment addresses, optional)
-   - Address Type (text, auto-populated, mandatory)
-   - Emirate (text, auto-populated, mandatory)
-   - And other fields as specified in Control Plan Data dictionary
-9. System does not support single control plan for head office and branches located in different emirates `[SRD Section 6.3.4.4.3]`
-10. Branches in different emirates are always treated as separate entities `[SRD Section 6.3.4.4.3]`
-11. Validation Team can save Control Plan as draft to continue work later
-12. System tracks completion status of Control Plan for each leaf section
+1. Once re-validation team is assigned, they receive notification to prepare Self-Assessment Questionnaire (SAQ) `[SRD Section 6.3.6.2.1]`
+2. Validation Team can use one of following options to create SAQ for revalidation: `[SRD Section 6.3.6.2.1]`
+   
+   **Option A - Create New SAQ:**
+   - Validation Team selects SAQ template to generate SAQ following same steps as validation process
+   - System generates new SAQ based on selected template
+   
+   **Option B - Reuse Previous SAQ:**
+   - Validation Team reuses SAQ from previous validation/revalidation
+   - Validation Team can edit reused SAQ by removing questions or entire sections
+   - System preserves original SAQ and creates modified copy for revalidation
+3. Validation team can define scope of revalidation by removing sections/questions from SAQ `[SRD Section 6.3.6.2]`
+4. Validation Team can decide not to share SAQ with commercial establishment `[SRD Section 6.3.6.2]`
+5. Revalidation process is similar to validation process with noted differences in scope and flexibility
+6. Validation Team prepares initial risk assessment and assessment plan following similar process as Phase 3
+7. Validation Team Lead reviews and approves re-assessment plan
+8. System follows same workflow as initial assessment plan preparation (US-VAL-003, US-VAL-004)
+9. System records all re-assessment plan activities in audit trail
+10. Once re-assessment plan is approved, revalidation process proceeds to execution phase
 
 **Business Rules:**
 - None specified for this story
 
 **Traceability:**
-- **BRD:** Control plan development
-- **SRD:** Section 6.3.4.4.3 "The Development of the Control Plan", Section 5.10 "Control Plan Data", Pages 88-91, 261-263
+- **BRD:** Re-assessment plan preparation
+- **SRD:** Section 6.3.6.2 "The Re-Validation Process", Section 6.3.6.2.1 "The Development of the SAQ", Pages 273-274
 
 **Dependencies:**
-- US-VAL-035 (AEO status must be approved)
+- US-CERT-018
 
 **Priority:** Must Have
 
 ---
 
-### US-VAL-037: Review and Approve Control Plan
+### US-CERT-020: Conduct Revalidation Activities
 
-**As a** Validation Team Lead  
-**I want to** review and approve the control plan  
-**So that** it can be used for ongoing monitoring of the AEO
+**As a** Validation Team Member  
+**I want to** conduct revalidation activities  
+**So that** commercial establishment's continued compliance can be verified
 
 **Acceptance Criteria:**
-1. After Control Plan is prepared, Validation Team Lead reviews the plan `[SRD Section 6.3.4.4.3]`
-2. Validation Team Lead can review:
-   - All monitoring actions defined for each leaf section
-   - Action details including responsible parties, frequencies, methods
-   - Completeness of plan across all relevant SAQ sections
-3. Validation Team Lead can make modifications before approving plan
-4. Validation Team Lead can:
-   - Edit any control action
-   - Add additional monitoring actions
-   - Remove or modify existing actions
-   - Request changes from Validation Team members
-5. Once satisfied with Control Plan, Validation Team Lead approves it `[SRD Section 6.3.4.4.3]`
-6. Following issuance of certificate, responsibility for ongoing monitoring of AEO's performance is transferred to Key Account Managers Team Member `[SRD Section 6.3.4.4.3]`
-7. During monitoring phase (post-certification), Control Plan remains editable by Key Account Managers Team—allowing modifications as necessary `[SRD Section 6.3.4.4.3]`
-8. Validation Team retains read-only access for supervision purposes `[SRD Section 6.3.4.4.3]`
-9. In event of re-validation of commercial establishment:
-   - Responsibility of modifying Control Plan is transferred again to Validation Team `[SRD Section 6.3.4.4.3]`
-   - Key Account Managers Team Member has read-only access till decision about AEO status is made
-   - If decision is to continue AEO status: responsibility goes back to Key Account Managers Team Member
-   - If decision is to suspend/revoke AEO status: responsibility remains with Validation Team
-10. System records Control Plan approval in audit trail
+1. Validation Team conducts revalidation following approved re-assessment plan
+2. Revalidation process follows similar workflow as validation process from Phase 3
+3. Validation Team may not require any meetings with commercial establishment `[SRD Section 6.3.6.2]`
+4. If SAQ was shared with commercial establishment, validation team reviews responses
+5. Validation Team can schedule meetings if needed following standard meeting process
+6. Validation Team performs on-site validation activities if required by re-assessment plan
+7. Validation Team identifies findings, remaining risks, and recommendations
+8. Validation Team creates assessment file for revalidation
+9. Validation Team prepares assessment report
+10. Validation Team can decide not to share assessment report with commercial establishment `[SRD Section 6.3.6.2]`
+11. All revalidation activities follow same standards and procedures as initial validation
+12. System maintains separation between revalidation records and initial validation records
+13. During revalidation, responsibility of modifying Control Plan is transferred to Validation Team `[US-VAL-037, SRD Section 6.3.4.4.3]`
+14. Key Account Manager has read-only access to control plan until decision about AEO status is made `[US-VAL-037]`
+15. System records all revalidation activities in audit trail
 
 **Business Rules:**
 - None specified for this story
 
 **Traceability:**
-- **BRD:** Control plan approval and handover
-- **SRD:** Section 6.3.4.4.3 "The Development of the Control Plan", Pages 261-263
+- **BRD:** Revalidation execution
+- **SRD:** Section 6.3.6.2 "The Re-Validation Process", Section 6.3.6.2.2 "Re-validation", Pages 273-275
 
 **Dependencies:**
-- US-VAL-036
+- US-CERT-019
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-021: Make Post-Revalidation Decision
+
+**As an** AEO Program Manager  
+**I want to** make final decision on AEO status after revalidation  
+**So that** appropriate action is taken based on revalidation findings
+
+**Acceptance Criteria:**
+1. After revalidation activities are completed, Validation Team Lead submits final recommendation to AEO Program Manager
+2. AEO Program Manager reviews:
+   - Revalidation assessment report
+   - Assessment file
+   - Findings and recommendations
+   - Violation history
+   - Monitoring history
+   - Previous validation results
+3. AEO Program Manager can make one of following decisions: `[SRD Section 6.3.6.2.3, 6.3.6.2.4]`
+   
+   **Decision A - Continue AEO Status:**
+   - AEO status continues
+   - System changes status to "AEO Certified"
+   - Benefits remain active
+   - Responsibility of control plan returns to Key Account Manager
+   
+   **Decision B - Suspend AEO Status:**
+   - AEO status is suspended temporarily
+   - System changes status to "AEO Status Suspended"
+   - Benefits can be disabled
+   - Suspension period is defined
+   
+   **Decision C - Revoke AEO Status:**
+   - AEO status is revoked permanently
+   - System changes status to "AEO Status Revoked"
+   - All benefits are terminated
+   - Certificate is cancelled
+4. System validates decision and requires justification for suspension or revocation
+5. System sends notification to:
+   - Commercial establishment (via email and AEO Portal)
+   - Key Account Manager
+   - Validation Team
+   - Local customs departments
+6. If decision is to continue AEO status: `[SRD Section 6.3.5.1, 6.3.6.2.4]`
+   - Responsibility of control plan goes back to Key Account Manager
+   - System records date of revalidation for next periodic cycle
+7. If decision is to suspend/revoke AEO status: `[US-VAL-037]`
+   - Responsibility of control plan remains with Validation Team
+   - Commercial establishment can submit appeal
+8. System records decision in audit trail `[SRD Section 6.3.6.2.5]`
+9. Commercial establishment status is updated accordingly
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Post-revalidation decision
+- **SRD:** Section 6.3.5.1 "Statuses of AEO", Section 6.3.6.2.3 "Post-Revalidation AEO Decision", Section 6.3.6.2.4 "Commercial Establishment Status After the Revalidation Process", Section 6.3.6.2.5 "Statuses of the Revalidation Process", Pages 270, 276-285
+
+**Dependencies:**
+- US-CERT-020
+
+**Priority:** Must Have
+
+---
+
+<a name="local-customs-suspension-revocation"></a>
+## 7. Local Customs Portal - Suspension and Revocation
+
+### Epic: Certificate Suspension and Revocation
+**Goal:** Enable AEO Program Manager to suspend or revoke AEO certificates when necessary
+
+---
+
+### US-CERT-022: Suspend AEO Certificate
+
+**As an** AEO Program Manager  
+**I want to** suspend AEO certificate  
+**So that** temporary non-compliance can be addressed without permanent revocation
+
+**Acceptance Criteria:**
+1. AEO Program Manager can suspend AEO status for period of time `[SRD Section 6.2.6.2, 6.3.5.1]`
+2. Suspension can be initiated for reasons such as:
+   - Major violations identified
+   - Non-compliance with AEO standards
+   - Failure to implement corrective actions
+   - Significant changes in business operations requiring review
+   - Pending investigation
+3. System provides suspension form with following fields:
+   - Reason for suspension
+   - Detailed justification
+   - Suspension period (start and end dates)
+   - Conditions for lifting suspension
+   - Supporting documents
+4. When AEO status is suspended, system changes status to "AEO Status Suspended" `[SRD Section 6.2.6.2, 6.3.5.1]`
+5. Status "AEO Status Suspended" is recorded in audit trail `[SRD Section 6.2.6.2, 6.3.5.1]`
+6. AEO Program Manager can disable or reactivate benefits granted to AEO during suspension
+7. System sends notification when AEO status is suspended to: `[SRD Section 6.2.6.3, 6.3.5.2]`
+   - Commercial establishment (via email and AEO Portal)
+   - Key Account Manager
+   - Local customs departments (via email and Local customs AEO management portal)
+   - Federal administrator
+8. During suspension, commercial establishment can:
+   - Submit corrective action plan
+   - Request review of suspension
+   - Submit appeal against suspension
+9. Suspended AEO can transition to following statuses: `[SRD Section 6.2.6.2]`
+   - **AEO Certified** - if AEO Program Manager removes suspension and continues AEO status
+   - **AEO Status Revoked** - if AEO Program Manager decides to revoke AEO status
+   - **AEO Status Cancelled** - if commercial establishment decides to cancel status
+10. System tracks suspension duration and sends reminders for review
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Certificate suspension
+- **SRD:** Section 6.2.6.2 "Statuses of AEO Certificate", Section 6.2.6.3 "Notifications", Section 6.3.5.1 "Statuses of AEO", Section 6.3.5.2 "Notifications", Pages 203-205, 270-271
+
+**Dependencies:**
+- US-CERT-004
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-023: Revoke AEO Certificate
+
+**As an** AEO Program Manager  
+**I want to** revoke AEO certificate permanently  
+**So that** commercial establishments that no longer meet standards lose AEO status
+
+**Acceptance Criteria:**
+1. AEO Program Manager can revoke AEO certificate permanently `[SRD Section 6.2.6.2, 6.3.5.1]`
+2. Revocation can be initiated for reasons such as:
+   - Severe or repeated violations
+   - Fraud or misrepresentation
+   - Failure to maintain AEO standards
+   - Failure to address issues during suspension period
+   - Loss of business license
+   - Request from federal authorities
+3. System provides revocation form with following fields:
+   - Reason for revocation
+   - Detailed justification
+   - Effective date
+   - Supporting documents and evidence
+4. System requires confirmation before processing revocation due to permanence
+5. When AEO status is revoked, system changes status to "AEO Status Revoked" `[SRD Section 6.2.6.2, 6.3.5.1]`
+6. Status "AEO Status Revoked" is final status `[SRD Section 6.2.6.2, 6.3.5.1]`
+7. Status is recorded in audit trail `[SRD Section 6.2.6.2, 6.3.5.1]`
+8. Upon revocation:
+   - All benefits are immediately terminated
+   - Certificate becomes invalid
+   - AEO status is removed
+   - Control plan monitoring ceases
+9. System sends notification when AEO status is revoked to: `[SRD Section 6.2.6.3, 6.3.5.2]`
+   - Commercial establishment (via email and AEO Portal)
+   - Key Account Manager
+   - Local customs departments (via email and Local customs AEO management portal)
+   - Federal administrator
+10. Commercial establishment can submit appeal against revocation within 30 days `[BR.20]`
+11. If no appeal is submitted or appeal is rejected, revocation becomes permanent
+12. Revoked commercial establishments cannot reapply for AEO status for defined period (as per policy)
+
+**Business Rules:**
+- BR.20: The commercial establishment has the right to submit an appeal against the decision of the relevant customs administration within a maximum of 30 days from the date of notification.
+
+**Traceability:**
+- **BRD:** Certificate revocation
+- **SRD:** Section 6.2.6.2 "Statuses of AEO Certificate", Section 6.2.6.3 "Notifications", Section 6.3.5.1 "Statuses of AEO", Section 6.3.5.2 "Notifications", Pages 203-205, 270-271
+
+**Dependencies:**
+- US-CERT-004
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-024: Continue AEO Status After Suspension
+
+**As an** AEO Program Manager  
+**I want to** continue AEO status after suspension  
+**So that** commercial establishments that address issues can resume normal AEO status
+
+**Acceptance Criteria:**
+1. AEO Program Manager can update AEO status to continued after suspension `[SRD Section 6.3.5.1]`
+2. Continuation can occur when:
+   - Suspension period expires
+   - Commercial establishment addresses all issues
+   - Corrective actions are successfully implemented
+   - Conditions for lifting suspension are met
+   - AEO Program Manager reviews and approves continuation
+3. System provides continuation review form with:
+   - Reason for continuing status
+   - Review of corrective actions taken
+   - Assessment of current compliance
+   - Any new conditions or requirements
+4. AEO Program Manager reviews:
+   - Original suspension reason
+   - Corrective action plan and implementation
+   - Monitoring results during suspension
+   - Current compliance status
+5. When AEO status is continued, system changes status from "AEO Status Suspended" to "AEO Certified" `[SRD Section 6.2.6.2, 6.3.5.1]`
+6. Status change is recorded in audit trail `[SRD Section 6.3.5.1]`
+7. Upon continuation:
+   - All benefits are reactivated (unless modified)
+   - Certificate becomes valid again
+   - Normal monitoring resumes
+   - Responsibility of control plan returns to Key Account Manager (if was suspended due to revalidation)
+8. System sends notification when AEO status is continued to: `[SRD Section 6.2.6.3, 6.3.5.2]`
+   - Commercial establishment (via email and AEO Portal)
+   - Key Account Manager
+   - Local customs departments (via email and Local customs AEO management portal)
+9. Notification specifies:
+   - Continuation of AEO status after suspension
+   - Effective date
+   - Any new conditions or requirements
+   - Next review date (if applicable)
+10. System updates certificate status and makes it available for download again
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Status continuation
+- **SRD:** Section 6.2.6.2 "Statuses of AEO Certificate", Section 6.2.6.3 "Notifications", Section 6.3.5.1 "Statuses of AEO", Section 6.3.5.2 "Notifications", Pages 203-205, 270-271
+
+**Dependencies:**
+- US-CERT-022
+
+**Priority:** Must Have
+
+---
+
+<a name="aeo-portal-appeals-submission"></a>
+## 8. AEO Portal - Appeals Submission
+
+### Epic: Appeals Management
+**Goal:** Enable commercial establishments to submit and manage appeals against customs decisions
+
+---
+
+### US-CERT-025: Submit Appeal Request
+
+**As a** Commercial Establishment Account Manager  
+**I want to** submit appeal against decision issued by customs department  
+**So that** I can challenge decisions I believe are unfair or incorrect
+
+**Acceptance Criteria:**
+1. Commercial establishment can submit appeal against decision of customs administration within maximum of 30 days from date of notification `[BR.20]`
+2. System validates that appeal is submitted within allowed timeframe (30 days)
+3. Appeal can be submitted for following reasons: `[SRD Section 5.12]`
+   - Rejection of membership request (AEO Authorization Request)
+   - Rejection of membership granting (AEO status)
+   - Suspension of membership
+   - Revocation of membership
+4. System provides appeal request form with following fields: `[SRD Section 5.12]`
+   - Reason for appeal (single choice from list above) - Mandatory
+   - Appeal details (text) - Mandatory
+   - Supporting document(s) - Optional
+   - Submission date - Auto-filled
+   - Appeal request reference number - Auto-generated
+5. Appeal request reference number follows format: AEO-APL-[Year]-[Sequential Number] `[SRD Section 5.12]`
+   - Example: AEO-APL-2025-0045
+   - Sequential number is four-digit running number starting from 0001 each year
+6. Commercial establishment must provide detailed justification for appeal
+7. Commercial establishment can attach supporting documents (evidence, correspondence, etc.)
+8. System validates that all mandatory fields are completed before submission
+9. Once submitted, system sends notification to: `[SRD Section 6.3.7.3]`
+   - Appeal officer (via email and Local customs AEO management portal)
+   - AEO program manager (via email and Local customs AEO management portal)
+10. System changes status to "Appeal Request Submitted"
+11. Commercial establishment receives confirmation with appeal reference number
+12. System records appeal submission in audit trail
+
+**Business Rules:**
+- BR.20: The commercial establishment has the right to submit an appeal against the decision of the relevant customs administration within a maximum of 30 days from the date of notification.
+
+**Traceability:**
+- **BRD:** Appeal submission process
+- **SRD:** Section 5.12 "Appeal Process Data", Section 6.3.7.3 "Notifications", Pages 92-94, 291-292
+
+**Dependencies:**
+- US-CERT-023 (or any decision that can be appealed)
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-026: Track Appeal Status
+
+**As a** Commercial Establishment Account Manager  
+**I want to** track status of my appeal request  
+**So that** I know progress and can take necessary actions
+
+**Acceptance Criteria:**
+1. Commercial establishment can view appeal status in AEO Portal
+2. System displays following possible statuses: `[SRD Section 6.3.7.2]`
+   - **Appeal Request Submitted** - When commercial establishment submits appeal request
+   - **Appeal Request Under Review** - When appeal officer starts reviewing request
+   - **Appeal Request Returned** - When appeal request is incomplete and returned for more information
+   - **Appeal Assigned for Decision** - When appeal is assigned to AEO program manager for decision
+   - **Hearing Session Scheduled** - When hearing session date is set
+   - **Hearing Session Conducted** - When hearing has taken place
+   - **Appeal Approved** - When appeal is accepted
+   - **Appeal Rejected** - When appeal is rejected
+   - **Appeal Escalated** - When appeal is escalated to federal level
+   - **Appeal Closed** - When appeal process is complete
+3. For each status, system displays:
+   - Status name
+   - Date/time of status change
+   - Remarks (if any)
+   - Required actions (if any)
+4. System sends notifications at key status changes: `[SRD Section 6.3.7.3]`
+   - When hearing session is requested
+   - When additional arguments are needed
+   - When decision is made
+   - When escalated to general department
+   - When appeal is closed automatically
+   - When appeal is rejected automatically
+5. Commercial establishment can view complete history of appeal with all status changes
+6. If appeal is returned, commercial establishment can see what information is required
+7. System displays deadline for responding to returned appeal (based on SLA)
+8. System alerts commercial establishment if response deadline is approaching
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Appeal status tracking
+- **SRD:** Section 6.3.7.2 "Statuses of the Appeal Request", Section 6.3.7.3 "Notifications", Pages 287-292
+
+**Dependencies:**
+- US-CERT-025
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-027: Respond to Returned Appeal
+
+**As a** Commercial Establishment Account Manager  
+**I want to** respond to returned appeal request  
+**So that** I can provide additional information requested by customs
+
+**Acceptance Criteria:**
+1. If appeal request is incomplete, appeals officer returns it to commercial establishment with remarks `[SRD Section 6.3.7.1]`
+2. System changes status to "Appeal Request Returned" `[SRD Section 6.3.7.2]`
+3. Commercial establishment receives notification that appeal was returned `[SRD Section 6.3.7.3]`
+4. System displays remarks from appeals officer explaining what is required
+5. Commercial establishment can view original appeal request and submitted documents
+6. System provides interface to:
+   - Update appeal details
+   - Add or replace supporting documents
+   - Address specific concerns raised by appeals officer
+   - Resubmit appeal
+7. System displays SLA deadline for responding to returned appeal
+8. If commercial establishment exceeds agreed SLA to reply, system automatically closes appeal `[SRD Section 6.3.7.2, 6.3.7.3]`
+9. When appeal is automatically closed, notification is sent to: `[SRD Section 6.3.7.3]`
+   - Commercial establishment (via email and AEO Portal)
+   - Appeal officer (via email and Local customs AEO management portal)
+   - AEO program manager (via email and Local customs AEO management portal)
+10. Once commercial establishment resubmits appeal with additional information, system changes status back to "Appeal Request Under Review"
+11. Resubmission is recorded in audit trail
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Appeal response
+- **SRD:** Section 6.3.7.1 "Reviewing an Appeal Request", Section 6.3.7.2 "Statuses of the Appeal Request", Section 6.3.7.3 "Notifications", Pages 285-292
+
+**Dependencies:**
+- US-CERT-026
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-028: Request Hearing Session
+
+**As a** Commercial Establishment Account Manager  
+**I want to** request hearing session after appeal rejection  
+**So that** I can present my case in person
+
+**Acceptance Criteria:**
+1. If appeal request is rejected, commercial establishment has option to object to rejection and request hearing `[SRD Section 6.3.7.1]`
+2. System provides "Request Hearing" button when appeal is rejected
+3. Commercial establishment must request hearing within defined timeframe
+4. System provides hearing request form
+5. Once hearing is requested, system sends notification to: `[SRD Section 6.3.7.3]`
+   - Appeal officer (via email and Local customs AEO management portal)
+   - AEO program manager (via email and Local customs AEO management portal)
+6. System changes status to "Hearing Session Requested"
+7. Relevant customs administration must coordinate hearing session date within 15 days from request date `[BR.21]`
+8. Appeals officer schedules hearing session with following details: `[SRD Section 5.12]`
+   - Hearing title - Mandatory
+   - Purpose of hearing - Optional
+   - Hearing date - Mandatory
+   - Start time - Mandatory
+   - Duration (from dropdown) - Mandatory
+9. System validates that hearing is scheduled within 15-day requirement
+10. Once hearing is scheduled, notification is sent to commercial establishment
+11. System provides hearing details including date, time, location/meeting link, and agenda
+
+**Business Rules:**
+- BR.21: If the commercial establishment requests a hearing session, the relevant customs administration must coordinate a session date within 15 days from the request date.
+
+**Traceability:**
+- **BRD:** Hearing request
+- **SRD:** Section 6.3.7.1 "Reviewing an Appeal Request", Section 6.3.7.3 "Notifications", Section 5.12 "Appeal Process Data", Pages 92-94, 285-292
+
+**Dependencies:**
+- US-CERT-026
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-029: Participate in Hearing Session
+
+**As a** Commercial Establishment Account Manager  
+**I want to** participate in hearing session  
+**So that** I can present my case and provide additional arguments
+
+**Acceptance Criteria:**
+1. Commercial establishment receives notification with hearing session details
+2. System provides hearing details including:
+   - Hearing title
+   - Purpose
+   - Date and time
+   - Location (if in-person) or meeting link (if virtual)
+   - Duration
+   - Required attendees
+   - Agenda
+3. Commercial establishment representative must attend hearing session
+4. If commercial establishment representative doesn't show to hearing session, appeal is rejected automatically `[SRD Section 6.3.7.2, 6.3.7.3]`
+5. When appeal is automatically rejected due to no-show, notification is sent to: `[SRD Section 6.3.7.3]`
+   - Commercial establishment (via email and AEO Portal)
+   - Appeal officer (via email and Local customs AEO management portal)
+   - AEO program manager (via email and Local customs AEO management portal)
+6. Appeals officer records hearing minutes during or after session `[SRD Section 5.12]`
+7. After hearing session, minutes are shared with commercial establishment
+8. Commercial establishment has 7 days to submit additional arguments after hearing minutes are shared `[BR.22]`
+9. If commercial establishment has additional arguments: `[SRD Section 5.12]`
+   - System provides form to submit arguments (text) - Mandatory
+   - System allows uploading additional documents - Optional
+10. When additional arguments are submitted, notification is sent to: `[SRD Section 6.3.7.3]`
+    - Appeal officer (via email and Local customs AEO management portal)
+    - AEO program manager (via email and Local customs AEO management portal)
+11. System tracks 7-day deadline for submitting additional arguments
+12. All hearing-related activities are recorded in audit trail
+
+**Business Rules:**
+- BR.22: After the hearing session minutes are shared, the commercial establishment has only 7 days to submit any additional arguments, if applicable.
+
+**Traceability:**
+- **BRD:** Hearing participation
+- **SRD:** Section 6.3.7.1 "Reviewing an Appeal Request", Section 6.3.7.2 "Statuses of the Appeal Request", Section 6.3.7.3 "Notifications", Section 5.12 "Appeal Process Data", Pages 92-94, 285-292
+
+**Dependencies:**
+- US-CERT-028
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-030: Object to Hearing Decision
+
+**As a** Commercial Establishment Account Manager  
+**I want to** object to hearing decision and escalate to federal level  
+**So that** higher authority can review my appeal
+
+**Acceptance Criteria:**
+1. After hearing session and final decision, if commercial establishment objects to upheld rejection decision, they can request escalation `[SRD Section 6.3.7.1]`
+2. System provides "Object to Decision" option after hearing decision is communicated
+3. Commercial establishment can submit objection with:
+   - Grounds for objection
+   - Additional arguments
+   - Supporting evidence
+4. When commercial establishment objects to upheld decision following hearing, appeal is escalated to general department of customs `[SRD Section 6.3.7.1, 6.3.7.2]`
+5. System changes status to "Appeal Escalated to Federal Level" `[SRD Section 6.3.7.2]`
+6. Status is recorded in audit trail `[SRD Section 6.3.7.2]`
+7. System sends notification when appeal is escalated to: `[SRD Section 6.3.7.3]`
+   - Appeal officer (via email and Local customs AEO management portal)
+   - AEO program manager (via email and Local customs AEO management portal)
+   - Federal administrator (via email and Federal customs AEO management portal)
+8. Complete appeal case file is transferred to federal level including:
+   - Original appeal request
+   - All supporting documents
+   - Review history
+   - Hearing minutes
+   - Decision history
+   - Objection details
+9. Federal administrator will review and make final decision on escalated appeal
+10. Commercial establishment receives confirmation that appeal has been escalated
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Appeal escalation
+- **SRD:** Section 6.3.7.1 "Reviewing an Appeal Request", Section 6.3.7.2 "Statuses of the Appeal Request", Section 6.3.7.3 "Notifications", Pages 285-292
+
+**Dependencies:**
+- US-CERT-029
+
+**Priority:** Must Have
+
+---
+
+<a name="local-customs-appeals-management"></a>
+## 9. Local Customs Portal - Appeals Management
+
+### Epic: Appeals Review and Decision
+**Goal:** Enable appeals officer and AEO Program Manager to review and decide on appeal requests
+
+---
+
+### US-CERT-031: Review Appeal Request for Completeness
+
+**As an** Appeals Officer  
+**I want to** review appeal request to ensure it is complete  
+**So that** proper review and decision-making can proceed
+
+**Acceptance Criteria:**
+1. After commercial establishment submits appeal request, it is forwarded to relevant customs department `[SRD Section 6.3.7.1]`
+2. Appeals officer receives notification about new appeal request `[SRD Section 6.3.7.3]`
+3. Appeals officer can view appeal request with all details:
+   - Appeal reference number
+   - Reason for appeal
+   - Appeal details/justification
+   - Supporting documents
+   - Commercial establishment information
+   - Original decision being appealed
+4. Employee responsible for handling appeal requests reviews and studies appeal request and ensures it is complete `[SRD Section 6.3.7.1]`
+5. Appeals officer determines if request is complete:
+   
+   **If Request is Incomplete:** `[SRD Section 6.3.7.1]`
+   - Appeals officer adds remarks to request explaining what is missing
+   - Appeals officer returns request to commercial establishment
+   - System changes status to "Appeal Request Returned"
+   
+   **If Request is Complete:** `[SRD Section 6.3.7.1]`
+   - Appeals officer adds recommendation to approve or reject appeal
+   - System provides recommendation options:
+     * Accept
+     * Reject
+   - Appeals officer provides remarks supporting recommendation - Mandatory `[SRD Section 5.12]`
+   - Appeals officer assigns request to AEO Program Manager for decision
+   - System changes status to "Appeal Assigned for Decision"
+6. System sends notification when appeal is assigned to AEO Program Manager for decision-making `[SRD Section 6.3.7.3]`
+7. All review actions are recorded in audit trail
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Appeal review
+- **SRD:** Section 6.3.7.1 "Reviewing an Appeal Request", Section 6.3.7.3 "Notifications", Section 5.12 "Appeal Process Data", Pages 92-94, 285-292
+
+**Dependencies:**
+- US-CERT-025
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-032: Make Appeal Decision
+
+**As an** AEO Program Manager  
+**I want to** make final decision on appeal request  
+**So that** appropriate action is taken on the appeal
+
+**Acceptance Criteria:**
+1. AEO Program Manager receives notification when appeal is assigned for decision `[SRD Section 6.3.7.3]`
+2. AEO Program Manager reviews appeal request including:
+   - Original decision being appealed
+   - Appeal justification and supporting documents
+   - Appeals officer's recommendation
+   - Complete case history
+3. AEO Program Manager can make one of following decisions: `[SRD Section 6.3.7.1, 5.12]`
+   
+   **Decision A - Approve Appeal:** `[SRD Section 6.3.7.1]`
+   - AEO Program Manager selects "Accept" decision
+   - Commercial establishment is notified of approval
+   - System automatically updates status of "AEO Authorization Request" or "AEO status" as follows:
+     * If "AEO Authorization Request" was rejected: System automatically accepts "AEO Authorization Request", and Senior administrator will need to assign Validation Team
+     * If granting AEO status was previously rejected: System automatically approves AEO status for commercial establishment, and AEO Program Manager assigns Key Account Managers Team
+     * If appeal was due to suspension or cancellation: System automatically updates commercial establishment's status to continue its status as AEO
+   - System changes appeal status to "Appeal Approved"
+   
+   **Decision B - Return Appeal:** `[SRD Section 6.3.7.1]`
+   - AEO Program Manager returns appeal request to appeals officer
+   - AEO Program Manager adds remarks explaining what needs to be addressed
+   - Appeals officer reviews and resubmits with additional information or clarification
+   
+   **Decision C - Reject Appeal:** `[SRD Section 6.3.7.1]`
+   - AEO Program Manager selects "Reject" decision
+   - AEO Program Manager adds reason for rejection - Mandatory in case of rejection `[SRD Section 5.12]`
+   - Commercial establishment is notified of rejection
+   - Commercial establishment has options:
+     * Accept rejection decision
+     * Request hearing session (if they object to rejection)
+   - System changes appeal status to "Appeal Rejected"
+4. System validates that decision includes proper justification
+5. System sends notification to commercial establishment and appeals officer about decision
+6. Decision is recorded in audit trail
+7. If appeal is approved, system triggers appropriate workflow to reverse original decision
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Appeal decision
+- **SRD:** Section 6.3.7.1 "Reviewing an Appeal Request", Section 6.3.7.3 "Notifications", Section 5.12 "Appeal Process Data", Pages 92-94, 285-292
+
+**Dependencies:**
+- US-CERT-031
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-033: Schedule Hearing Session
+
+**As an** Appeals Officer  
+**I want to** schedule hearing session for appeal  
+**So that** commercial establishment can present their case in person
+
+**Acceptance Criteria:**
+1. When commercial establishment requests hearing session, appeals officer receives notification `[SRD Section 6.3.7.3]`
+2. Relevant customs administration must coordinate hearing session date within 15 days from request date `[BR.21]`
+3. Appeals officer schedules hearing session with following details: `[SRD Section 5.12]`
+   - Hearing title (text) - Mandatory
+   - Purpose of hearing (text) - Optional
+   - Hearing date - Mandatory
+   - Start time - Mandatory
+   - Duration (single choice list) - Mandatory
+4. System validates that hearing date is within 15-day requirement from request date
+5. System validates that meeting is scheduled with adequate advance notice as defined in system settings `[BR.26]`
+6. System will not allow scheduling hearing with date earlier than defined notification period `[BR.26]`
+7. Appeals officer can specify:
+   - Location (if in-person hearing)
+   - Meeting link (if virtual hearing)
+   - Required attendees from customs side
+   - Required attendees from commercial establishment side
+   - Agenda items
+8. System changes status to "Hearing Session Scheduled"
+9. System sends hearing invitation to:
+   - Commercial establishment (via email and AEO Portal)
+   - AEO Program Manager
+   - Other customs officials involved
+10. Invitation includes all hearing details and instructions
+11. System sends reminders before hearing based on configured schedule
+12. Commercial establishment can view hearing details in AEO Portal
+
+**Business Rules:**
+- BR.21: If the commercial establishment requests a hearing session, the relevant customs administration must coordinate a session date within 15 days from the request date.
+- BR.26: When scheduling meetings whether field visits, remote meetings, or a hearing session for an appeal request, the commercial establishment shall be notified of a specific period in advance, as defined in the system settings. The system will not allow scheduling any meeting with a date earlier than the defined notification period.
+
+**Traceability:**
+- **BRD:** Hearing scheduling
+- **SRD:** Section 6.3.7.1 "Reviewing an Appeal Request", Section 6.3.7.3 "Notifications", Section 5.12 "Appeal Process Data", Pages 92-94, 285-292
+
+**Dependencies:**
+- US-CERT-028
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-034: Conduct Hearing Session and Record Minutes
+
+**As an** Appeals Officer  
+**I want to** conduct hearing session and record minutes  
+**So that** commercial establishment's case is properly heard and documented
+
+**Acceptance Criteria:**
+1. Appeals officer conducts hearing session on scheduled date and time
+2. System tracks attendance:
+   - Customs officials present
+   - Commercial establishment representatives present
+3. If commercial establishment representative doesn't attend, system allows marking as no-show
+4. If no-show is recorded, appeal is automatically rejected `[SRD Section 6.3.7.2, 6.3.7.3]`
+5. During or after hearing, appeals officer records hearing minutes `[SRD Section 5.12]`
+6. Hearing minutes include:
+   - Date and time of hearing
+   - Attendees
+   - Commercial establishment's arguments and evidence presented
+   - Questions asked and answers provided
+   - Customs department's position
+   - Key discussion points
+   - Preliminary findings (if any)
+7. System provides text field for entering hearing minutes - Mandatory `[SRD Section 5.12]`
+8. Appeals officer can attach documents or evidence presented during hearing
+9. After hearing minutes are recorded, appeals officer shares them with commercial establishment
+10. System sends notification to commercial establishment that hearing minutes are available
+11. System changes status to "Hearing Session Conducted"
+12. Commercial establishment has 7 days to submit additional arguments after hearing minutes are shared `[BR.22]`
+13. System tracks 7-day deadline and alerts if deadline is approaching
+14. If commercial establishment submits additional arguments within 7 days, system notifies appeals officer and AEO Program Manager
+15. All hearing activities are recorded in audit trail
+
+**Business Rules:**
+- BR.22: After the hearing session minutes are shared, the commercial establishment has only 7 days to submit any additional arguments, if applicable.
+
+**Traceability:**
+- **BRD:** Hearing conduct
+- **SRD:** Section 6.3.7.1 "Reviewing an Appeal Request", Section 6.3.7.2 "Statuses of the Appeal Request", Section 6.3.7.3 "Notifications", Section 5.12 "Appeal Process Data", Pages 92-94, 285-292
+
+**Dependencies:**
+- US-CERT-033
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-035: Make Post-Hearing Decision
+
+**As an** AEO Program Manager  
+**I want to** make final decision after hearing session  
+**So that** appeal can be concluded appropriately
+
+**Acceptance Criteria:**
+1. After hearing session and any additional arguments are submitted, appeals officer prepares final recommendation
+2. Appeals officer forwards case to AEO Program Manager for final decision
+3. AEO Program Manager reviews:
+   - Hearing minutes
+   - Additional arguments submitted by commercial establishment (if any)
+   - Appeals officer's recommendation
+   - All evidence and documentation
+   - Original decision context
+4. AEO Program Manager makes final decision:
+   - **Uphold Original Decision** (Reject Appeal)
+   - **Reverse Original Decision** (Accept Appeal)
+5. If decision is to reject appeal after hearing:
+   - Commercial establishment has option to object and request escalation to federal level
+   - If commercial establishment accepts decision, appeal is closed
+   - System changes status to "Appeal Rejected" or "Appeal Closed"
+6. If decision is to accept appeal:
+   - System triggers reversal of original decision
+   - Status of AEO Authorization Request or AEO status is updated accordingly
+   - System changes appeal status to "Appeal Approved"
+7. System sends notification to commercial establishment about final decision
+8. Decision includes detailed explanation of reasoning
+9. All post-hearing activities are recorded in audit trail
+10. If commercial establishment objects to rejection, case proceeds to escalation (US-CERT-030)
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Post-hearing decision
+- **SRD:** Section 6.3.7.1 "Reviewing an Appeal Request", Section 6.3.7.2 "Statuses of the Appeal Request", Pages 285-292
+
+**Dependencies:**
+- US-CERT-034
+
+**Priority:** Must Have
+
+---
+
+<a name="federal-customs-appeals-escalation"></a>
+## 10. Federal Customs Portal - Appeals Escalation
+
+### Epic: Federal Appeals Review
+**Goal:** Enable Federal Administrator to review and decide on escalated appeals
+
+---
+
+### US-CERT-036: Review Escalated Appeal
+
+**As a** Federal Administrator  
+**I want to** review appeal that has been escalated to federal level  
+**So that** I can make final determination on the appeal
+
+**Acceptance Criteria:**
+1. When appeal is escalated to general department of customs, Federal Administrator receives notification `[SRD Section 6.3.7.3]`
+2. System changes status to "Appeal Escalated to Federal Level" `[SRD Section 6.3.7.2]`
+3. Federal Administrator can access complete appeal case file including:
+   - Original appeal request and all supporting documents
+   - Local customs review and recommendation
+   - Hearing minutes (if hearing was held)
+   - Additional arguments submitted by commercial establishment
+   - All decision history
+   - Objection to local decision
+4. Federal Administrator can review:
+   - Original decision by local customs that was appealed
+   - Local customs handling of appeal
+   - Procedural correctness
+   - Substantive merits of case
+5. System provides interface to:
+   - Review all documents
+   - Add federal review notes
+   - Request additional information if needed
+   - Prepare decision
+6. Federal Administrator can communicate with:
+   - Local customs (for clarification)
+   - Commercial establishment (if additional information needed)
+7. All review activities are tracked in audit trail
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Federal appeal review
+- **SRD:** Section 6.3.7.1 "Reviewing an Appeal Request", Section 6.3.7.2 "Statuses of the Appeal Request", Section 6.3.7.3 "Notifications", Pages 285-292
+
+**Dependencies:**
+- US-CERT-030
+
+**Priority:** Must Have
+
+---
+
+### US-CERT-037: Make Final Federal Decision on Appeal
+
+**As a** Federal Administrator  
+**I want to** make final decision on escalated appeal  
+**So that** appeal can be concluded at highest level
+
+**Acceptance Criteria:**
+1. Federal Administrator makes final decision on escalated appeal
+2. Federal Administrator can decide to:
+   
+   **Decision A - Uphold Local Decision:**
+   - Federal Administrator confirms local customs decision
+   - Appeal is finally rejected
+   - No further recourse available
+   - System closes appeal
+   
+   **Decision B - Reverse Local Decision:**
+   - Federal Administrator overturns local customs decision
+   - Appeal is approved
+   - Original decision is reversed
+   - Appropriate action is triggered (accept application, continue status, etc.)
+   
+   **Decision C - Remand to Local Customs:**
+   - Federal Administrator sends case back to local customs for reconsideration
+   - Federal Administrator provides specific instructions or areas to address
+   - Local customs must review again following federal guidance
+3. System requires detailed justification for federal decision
+4. Decision must address:
+   - Key issues raised in appeal
+   - Analysis of local customs handling
+   - Legal and procedural considerations
+   - Final determination and reasoning
+5. System sends notification when federal decision is made to:
+   - Commercial establishment (via email and AEO Portal)
+   - Local customs departments (via email and Local customs AEO management portal)
+   - All involved parties
+6. Federal decision is recorded as final in audit trail
+7. If appeal is approved at federal level:
+   - System triggers reversal of original decision
+   - Status updates are propagated throughout system
+   - All relevant parties are notified
+8. System changes appeal status to appropriate final status:
+   - "Appeal Approved" (if reversed)
+   - "Appeal Rejected" (if upheld)
+   - "Appeal Returned to Local Customs" (if remanded)
+9. Federal decision becomes part of permanent record and may be used as precedent
+
+**Business Rules:**
+- None specified for this story
+
+**Traceability:**
+- **BRD:** Federal appeal decision
+- **SRD:** Section 6.3.7.1 "Reviewing an Appeal Request", Section 6.3.7.2 "Statuses of the Appeal Request", Pages 285-292
+
+**Dependencies:**
+- US-CERT-036
 
 **Priority:** Must Have
 
@@ -1561,18 +1808,21 @@ Enable the Validation Team Lead and AEO Program Manager to make final decisions 
 
 ## Summary Tables
 
-### Phase 3 User Stories Summary by Portal
+### Phase 4 User Stories Summary by Portal
 
 | Portal | Epic | User Stories Count |
 |--------|------|-------------------|
-| **Local Customs Portal** | Initial Risk Assessment | 6 (US-VAL-001 to US-VAL-006) |
-| **Local Customs Portal** | Validation Meetings Management | 5 (US-VAL-007 to US-VAL-011) |
-| **AEO Portal** | Meeting Coordination | 2 (US-VAL-012 to US-VAL-013) |
-| **Local Customs Portal** | On-Site Validation and Assessment File | 7 (US-VAL-014 to US-VAL-020) |
-| **Local Customs Portal** | Assessment Report Generation | 4 (US-VAL-021 to US-VAL-024) |
-| **AEO Portal** | Assessment Report Review and Response | 6 (US-VAL-025 to US-VAL-030) |
-| **Local Customs Portal** | Final Decision and Control Plan | 7 (US-VAL-031 to US-VAL-037) |
-| **TOTAL** | **7 Epics** | **37 User Stories** |
+| **Federal Customs Portal** | AEO Certification Process | 2 (US-CERT-001 to US-CERT-002) |
+| **Federal Customs Portal** | Certificate Issuance | 2 (US-CERT-003 to US-CERT-004) |
+| **AEO Portal** | Certificate Management | 3 (US-CERT-005 to US-CERT-007) |
+| **Local Customs Portal** | Key Account Management | 5 (US-CERT-008 to US-CERT-012) |
+| **Local Customs Portal** | Control Plan Execution and Monitoring | 4 (US-CERT-013 to US-CERT-016) |
+| **Local Customs Portal** | Re-validation Process | 5 (US-CERT-017 to US-CERT-021) |
+| **Local Customs Portal** | Certificate Suspension and Revocation | 3 (US-CERT-022 to US-CERT-024) |
+| **AEO Portal** | Appeals Management | 6 (US-CERT-025 to US-CERT-030) |
+| **Local Customs Portal** | Appeals Review and Decision | 5 (US-CERT-031 to US-CERT-035) |
+| **Federal Customs Portal** | Federal Appeals Review | 2 (US-CERT-036 to US-CERT-037) |
+| **TOTAL** | **10 Epics** | **37 User Stories** |
 
 ---
 
@@ -1591,129 +1841,76 @@ Enable the Validation Team Lead and AEO Program Manager to make final decisions 
 
 | Business Rule | Description | Referenced in User Stories |
 |--------------|-------------|---------------------------|
-| BR.26 | When scheduling meetings whether field visits, remote meetings, or a hearing session for an appeal request, the commercial establishment shall be notified of a specific period in advance, as defined in the system settings. The system will not allow scheduling any meeting with a date earlier than the defined notification period. | US-VAL-007, US-VAL-009 |
+| BR.17 | License expiration date calculated as two years from issuance | US-CERT-004 |
+| BR.20 | Commercial establishment can submit appeal within 30 days | US-CERT-023, US-CERT-025 |
+| BR.21 | Hearing session must be coordinated within 15 days | US-CERT-028, US-CERT-033 |
+| BR.22 | 7 days to submit additional arguments after hearing | US-CERT-029, US-CERT-034 |
+| BR.23 | Periodic revalidation within 5 years | US-CERT-017 |
+| BR.25 | Validation team consists of at least two members | US-CERT-018 |
+| BR.26 | Meetings scheduled with advance notice per system settings | US-CERT-015, US-CERT-033 |
 
 ---
 
-### Key Validation Process Statuses
+### Phase 4 User Stories Traceability Matrix
 
-| Status | Description | Portal |
-|--------|-------------|--------|
-| Initial Risk Assessment and Assessment Plan is Draft | Validation team reviewing SAQ to prepare initial risk assessment and assessment plan | Local Customs |
-| Initial Risk Assessment and Assessment Plan Ready for Approval | All leaf sections completed for risk assessment | Local Customs |
-| Initial Risk Assessment and Assessment Plan Approved | Validation team lead approved, ready to begin on-site validation | Local Customs |
-| Commercial Establishment On-Site Validation | Meetings scheduled to verify compliance with AEO standards | Local Customs |
-| Assessment File Ready for Approval | All findings, recommendations and remaining risks added for all sections | Local Customs |
-| Assessment File Approved | Assessment file approved by validation team lead | Local Customs |
-| Draft Assessment Report Shared | Draft assessment report shared with commercial establishment | Local/AEO |
-| Compliance Improvement Plan Submitted | Commercial establishment submitted improvement plan | AEO/Local |
-| Compliance Improvement Plan Returned | Plan returned to establishment for modifications | Local/AEO |
-| Compliance Improvement Plan in Progress | Approved plan being executed by establishment | AEO |
-| Verifying Compliance Plan Implementation | Establishment confirmed completion, awaiting customs verification | Local/AEO |
-| AEO Status Under Review | AEO Program Manager reviewing for final decision | Local Customs |
-| AEO Status Granted | Decision to grant AEO status confirmed | Local/AEO |
-| AEO Status Rejected | Decision to reject AEO status | Local/AEO |
-
----
-
-### Validation Process Workflow Diagram
-
-```
-Initial Risk Assessment Phase:
-SAQ Approved → Initial Risk Assessment Draft → Ready for Approval → Approved
-          ↓
-Validation Meetings Phase:
-Schedule Meetings → Commercial Establishment Confirms Dates → Conduct Meetings → Record Minutes
-          ↓
-On-Site Validation Phase:
-Commercial Establishment On-Site Validation → Develop Assessment File
-          ↓
-Assessment File Development:
-Add Remaining Risks → Add Findings → Add Recommendations → Assessment File Ready for Approval → Assessment File Approved
-          ↓
-Assessment Report Phase:
-Generate Draft Assessment Report → Complete Report Content → Validation Team Lead Reviews → Share Draft with Establishment
-          ↓
-Commercial Establishment Review:
-(Option A) Provide Comments → Return to Customs (back to Validation Team)
-(Option B) Upload Compliance Improvement Plan (if required) → Approve Report
-          ↓
-Compliance Improvement Plan Phase (if required):
-Validation Team Reviews Plan → Approve/Return Plan → Establishment Implements Plan → 
-Confirms Implementation → Validation Team Verifies Implementation
-          ↓
-Final Decision Phase:
-Validation Team Lead Submits Recommendation → AEO Program Manager Reviews → 
-Final Decision: Approve/Reject/Request Clarifications
-          ↓
-(If Approved)
-Control Plan Development:
-Validation Team Develops Control Plan → Validation Team Lead Approves → 
-Transfer to Key Account Managers Team → Certificate Issuance Process
-```
-
----
-
-## Traceability Matrix
-
-### Source Document References
-
-| User Story | BRD Reference | SRD Reference | Page Numbers |
-|------------|---------------|---------------|--------------|
-| US-VAL-001 | Initial risk assessment process | Section 6.3.4.2 | 246-247 |
-| US-VAL-002 | Risk assessment methodology | Section 6.3.4.2.1, 5.6 | 71-75, 247-249 |
-| US-VAL-003 | Assessment plan preparation | Section 6.3.4.2.2, 5.6 | 71-75, 249-250 |
-| US-VAL-004 | Reference documentation | Section 6.3.4.2.3, 5.6 | 71-75, 250 |
-| US-VAL-005 | Completion tracking | Section 6.3.4.2.4, 6.3.4.2.6, 6.3.4.2.7 | 250-252 |
-| US-VAL-006 | Initial risk assessment approval | Section 6.3.4.2.5, 6.3.4.2.6, 6.3.4.2.7 | 251-252 |
-| US-VAL-007 | Meeting scheduling | Section 6.3.4.3.1, 5.7, BR.26 | 75-78, 252-254 |
-| US-VAL-008 | Shared calendar management | Section 6.3.4.3.1 | 252-254 |
-| US-VAL-009 | Meeting cancellation/rescheduling | Section 6.3.4.3.1, 5.7, 6.2.5.6 | 75-78, 201-202, 252-254 |
-| US-VAL-010 | Meeting minutes | Section 6.3.4.3.1, 5.7 | 75-78, 252-254 |
-| US-VAL-011 | Official meeting letter | Section 6.3.4.3.1 | 252-254 |
-| US-VAL-012 | Meeting invitation response | Section 6.2.5.1, 6.3.4.3.1, 6.3.4.4.5, 6.2.5.6 | 192-193, 201-202, 252-254, 268-269 |
-| US-VAL-013 | Meeting schedule visibility | Section 6.2.5.1, 6.3.4.3.1 | 192-193, 252-254 |
-| US-VAL-014 | On-site validation execution | Section 6.3.4.3, 6.3.4.4.4 | 252-256, 263-264 |
-| US-VAL-015 | Assessment file with remaining risks | Section 6.3.4.3.2, 5.8 | 78-81, 254-256 |
-| US-VAL-016 | Findings documentation | Section 6.3.4.3.2, 5.8 | 78-81, 254-256 |
-| US-VAL-017 | Recommendations documentation | Section 6.3.4.3.2, 5.8, 6.3.4.3.4 | 78-81, 254-257 |
-| US-VAL-018 | Internal comments during validation | Section 6.3.4.3.2 | 254-256 |
-| US-VAL-019 | Assessment file completion | Section 6.3.4.3.2, 6.3.4.4.4, 6.3.4.4.5 | 254-256, 263-264, 268-269 |
-| US-VAL-020 | Assessment file approval | Section 6.3.4.3.3, 6.3.4.4.4 | 255-256, 263-264 |
-| US-VAL-021 | Assessment report generation | Section 6.3.4.3.4, 5.9 | 81-88, 256-257 |
-| US-VAL-022 | Assessment report content | Section 6.3.4.3.4 | 256-257 |
-| US-VAL-023 | Content selection for sharing | Section 6.3.4.3.5 | 257-258 |
-| US-VAL-024 | Assessment report sharing | Section 6.3.4.3.5, 6.3.4.3.6, 6.3.4.4.4, 6.2.5.2, 6.2.5.6 | 193-194, 201-202, 257-258, 263-264 |
-| US-VAL-025 | Assessment report review | Section 6.2.5.2, 6.2.5.6 | 193-194, 201-202 |
-| US-VAL-026 | Comments on assessment report | Section 6.2.5.2, 6.2.5.6, 6.3.4.4.5 | 193-194, 201-202, 268-269 |
-| US-VAL-027 | Compliance Improvement Plan upload | Section 6.2.5.2, 5.9 | 86-87, 193-194 |
-| US-VAL-028 | Assessment report approval | Section 6.2.5.2, 6.2.5.6, 6.3.4.4.5 | 193-194, 201-202, 268-269 |
-| US-VAL-029 | Plan extension request | Section 6.3.4.4, 5.9 | 87, 259 |
-| US-VAL-030 | Plan implementation confirmation | Section 6.3.4.4.1, 5.9 | 87-88, 259-260 |
-| US-VAL-031 | Returned report review | Section 6.3.4.3.6, 6.3.4.4.5 | 258, 268-269 |
-| US-VAL-032 | Compliance plan review | Section 6.3.4.4.1, 6.2.5.2, 6.2.5.6 | 193-194, 201-202, 259-260 |
-| US-VAL-033 | Plan implementation verification | Section 6.3.4.4.1 | 259-260 |
-| US-VAL-034 | Final recommendation submission | Section 6.3.4.4.1, 6.3.4.4.2, 6.3.4.4.5 | 259-261, 268-269 |
-| US-VAL-035 | Final AEO status decision | Section 6.3.4.4.2, 6.3.4.4.4, 6.3.4.4.5 | 260-261, 263-268, 268-269 |
-| US-VAL-036 | Control plan development | Section 6.3.4.4.3, 5.10 | 88-91, 261-263 |
-| US-VAL-037 | Control plan approval | Section 6.3.4.4.3 | 261-263 |
+| User Story ID | User Story Title | SRD Sections | Page Numbers |
+|--------------|------------------|--------------|--------------|
+| US-CERT-001 | Key Account Team assignment | Section 6.3.5, 6.3.6.1 | 269-272 |
+| US-CERT-002 | Benefits assignment | Section 6.3.5 | 269-270 |
+| US-CERT-003 | Certificate issuance request | Section 6.3.5, 6.2.6.1 | 203, 269-270 |
+| US-CERT-004 | Issue certificate | Section 6.3.5, 6.2.6.1, 6.2.6.2, 6.2.6.3, 6.3.5.1, 6.3.5.2 | 203-205, 270-271 |
+| US-CERT-005 | View certificate status | Section 6.2.6.2, 6.2.6.3, 6.2.5.6 | 193-194, 201-205 |
+| US-CERT-006 | View and download certificate | Section 6.2.6.1 | 203 |
+| US-CERT-007 | Request cancellation | Section 6.2.6.2 | 203-205 |
+| US-CERT-008 | View AEO dashboard | Section 6.3.6.1 | 271-272 |
+| US-CERT-009 | View establishment profile | Section 6.3.6.1 | 271-272 |
+| US-CERT-010 | Manage contact persons | Section 6.3.6.1, 5.11 | 78-79, 271-273 |
+| US-CERT-011 | Communicate with establishment | Section 6.3.6.1, 6.3.8, 6.3.8.1 | 271-273, 292-294 |
+| US-CERT-012 | Log violations | Section 6.3.6.1 | 271-273 |
+| US-CERT-013 | View and manage control plan | Section 6.3.4.4.3, 6.3.6.1, 5.10 | 88-91, 261-263, 271-273 |
+| US-CERT-014 | Execute monitoring actions | Section 6.3.6.1 | 271-273 |
+| US-CERT-015 | Schedule monitoring meetings | Section 6.3.6.1 | 271-273 |
+| US-CERT-016 | Amend establishment profile | Section 6.3.6.1 | 271-273 |
+| US-CERT-017 | Raise revalidation request | Section 6.3.6.1, 6.3.6.2 | 271-274 |
+| US-CERT-018 | Approve revalidation request | Section 6.3.6.2 | 273-274 |
+| US-CERT-019 | Prepare re-assessment plan | Section 6.3.6.2, 6.3.6.2.1 | 273-274 |
+| US-CERT-020 | Conduct revalidation | Section 6.3.6.2, 6.3.6.2.2 | 273-275 |
+| US-CERT-021 | Post-revalidation decision | Section 6.3.5.1, 6.3.6.2.3, 6.3.6.2.4, 6.3.6.2.5 | 270, 276-285 |
+| US-CERT-022 | Suspend certificate | Section 6.2.6.2, 6.2.6.3, 6.3.5.1, 6.3.5.2 | 203-205, 270-271 |
+| US-CERT-023 | Revoke certificate | Section 6.2.6.2, 6.2.6.3, 6.3.5.1, 6.3.5.2 | 203-205, 270-271 |
+| US-CERT-024 | Continue status after suspension | Section 6.2.6.2, 6.2.6.3, 6.3.5.1, 6.3.5.2 | 203-205, 270-271 |
+| US-CERT-025 | Submit appeal | Section 5.12, 6.3.7.3 | 92-94, 291-292 |
+| US-CERT-026 | Track appeal status | Section 6.3.7.2, 6.3.7.3 | 287-292 |
+| US-CERT-027 | Respond to returned appeal | Section 6.3.7.1, 6.3.7.2, 6.3.7.3 | 285-292 |
+| US-CERT-028 | Request hearing | Section 6.3.7.1, 6.3.7.3, 5.12 | 92-94, 285-292 |
+| US-CERT-029 | Participate in hearing | Section 6.3.7.1, 6.3.7.2, 6.3.7.3, 5.12 | 92-94, 285-292 |
+| US-CERT-030 | Object and escalate | Section 6.3.7.1, 6.3.7.2, 6.3.7.3 | 285-292 |
+| US-CERT-031 | Review appeal completeness | Section 6.3.7.1, 6.3.7.3, 5.12 | 92-94, 285-292 |
+| US-CERT-032 | Make appeal decision | Section 6.3.7.1, 6.3.7.3, 5.12 | 92-94, 285-292 |
+| US-CERT-033 | Schedule hearing | Section 6.3.7.1, 6.3.7.3, 5.12 | 92-94, 285-292 |
+| US-CERT-034 | Conduct hearing | Section 6.3.7.1, 6.3.7.2, 6.3.7.3, 5.12 | 92-94, 285-292 |
+| US-CERT-035 | Post-hearing decision | Section 6.3.7.1, 6.3.7.2 | 285-292 |
+| US-CERT-036 | Review escalated appeal | Section 6.3.7.1, 6.3.7.2, 6.3.7.3 | 285-292 |
+| US-CERT-037 | Federal appeal decision | Section 6.3.7.1, 6.3.7.2 | 285-292 |
 
 ---
 
 ## Next Steps
 
-**Phase 3 is now complete.** The next phase will be:
+**Phase 4 is now complete.** This completes the core AEO lifecycle phases. Additional phases may include:
 
-**Phase 4: AEO Certification & Post-Certification Management**
-- Estimated 20-25 user stories covering:
-  - Certificate Issuance Process
-  - Benefits Management
-  - Key Account Management
-  - Control Plan Execution and Monitoring
-  - Performance Monitoring
-  - Re-validation Process
-  - Certificate Suspension and Revocation
-  - Appeals Management
+**Phase 5: System Administration & Configuration** (if required)
+- Estimated 15-20 user stories covering:
+  - Question Bank Management
+  - SAQ Template Management
+  - Benefits and Benefits Groups Management
+  - Risks Lookup Management
+  - Violations Lookup Management
+  - Control Plan Actions Lookup Management
+  - Mutual Recognition Agreements (MRA) Management
+  - User and Role Management
+  - System Settings Configuration
+  - Notifications and Reminders Configuration
 
 ---
 
@@ -1721,8 +1918,8 @@ Transfer to Key Account Managers Team → Certificate Issuance Process
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | November 07, 2025 | AEO Project Team | Initial version - Phase 3 Validation & Risk Assessment User Stories |
+| 1.0 | November 07, 2025 | AEO Project Team | Initial version - Phase 4 Certification & Post-Certification Management User Stories |
 
 ---
 
-**End of Phase 3 User Stories Document**
+**End of Phase 4 User Stories Document**
