@@ -393,7 +393,7 @@ At the end of Day 10, capture the following for each deliverable:
 
 ---
 
-**Prepared By:** GPT-5 Codex (Sprint Implementation Support)  
+**Prepared By:** Techinvo (Sprint Implementation Support)  
 **Date:** November 09, 2025  
 **Document Location:** `Sprint Implementation Plan/Sprint 0 - Aggressive Mode Implementation Plan.md`
 
